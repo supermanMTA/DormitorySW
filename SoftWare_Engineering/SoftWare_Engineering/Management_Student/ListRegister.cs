@@ -19,6 +19,7 @@ namespace SoftWare_Engineering.Management_Student
         {
             InitializeComponent();
         }
+        #region Load dữ liệu
         private void LoadStudent()
         {
             var list = from p in context.RegistrationForms
@@ -43,7 +44,9 @@ namespace SoftWare_Engineering.Management_Student
         {
             LoadStudent();
         }
+        #endregion
 
+        #region Sự kiện
         private void gridRegister_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             try
@@ -104,7 +107,7 @@ namespace SoftWare_Engineering.Management_Student
                 context.RegistrationForms.Remove(RG);
                 context.SaveChanges();
                 MessageBox.Show("Done");
-                this.Hide();
+              
                 Room r = context.Rooms.Find(st.Room_ID);
                 r.Number++;
                 context.SaveChanges();
@@ -114,19 +117,21 @@ namespace SoftWare_Engineering.Management_Student
                 RL.Job = RG.JobOfFather;
                 RL.Relationship = "Bố";
                 context.Relatives.Add(RL);
-
+                context.SaveChanges();
                 Relative RL1 = new Relative();
                 RL1.ID_Student = st.ID;
                 RL1.Name = RG.NameMother;
                 RL1.Job = RG.JobOfMother;
                 RL1.Relationship = "Mẹ";
                 context.Relatives.Add(RL1);
-
+                context.SaveChanges();
+                this.Hide();
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
     }
 }

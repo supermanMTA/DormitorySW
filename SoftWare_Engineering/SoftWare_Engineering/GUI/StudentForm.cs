@@ -421,9 +421,6 @@ namespace SoftWare_Engineering.GUI
             contract.ShowDialog();
         }
 
-        private void barSort_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
+       
     }
 }

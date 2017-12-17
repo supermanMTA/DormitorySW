@@ -41,14 +41,15 @@ namespace SoftWare_Engineering.GUI
             LoaddgvStaff();
         }
 
-        private Staff GetStaffByForm()
+        private Staff GetStaffByForm(Staff sf)
         {
-            Staff sf = new Staff();
+          //  Staff sf = new Staff();
             sf.Name = txtName.Text;
             sf.PhoneNumber = txtPhone.Text;
             sf.Nation = cbbNation.Text;
             sf.Religion = cbbReligion.Text;
             sf.DateOfBirth = dtStaff.Value;
+            sf.Address = txtAddress.Text;
             return sf;
         }
         #region Sự kiện của nhân viên
@@ -106,7 +107,7 @@ namespace SoftWare_Engineering.GUI
                 try
                 {
                     Staff tg = new Staff();
-                    tg = GetStaffByForm();
+                     GetStaffByForm(tg);
                     context.Staffs.Add(tg);
                     context.SaveChanges();
                     MessageBox.Show("Done!");
@@ -123,7 +124,7 @@ namespace SoftWare_Engineering.GUI
                 {
                     int id = (int)griStaff.GetFocusedRowCellValue("ID");
                     Staff tg = context.Staffs.Where(p => p.ID == id).FirstOrDefault();
-                    tg = GetStaffByForm();
+                     GetStaffByForm(tg);
                     context.SaveChanges();
                     MessageBox.Show("Done!");
                     LoaddgvStaff();
@@ -175,7 +176,7 @@ namespace SoftWare_Engineering.GUI
                     try
                     {
                         int id = (int)griStaff.GetFocusedRowCellValue("ID");
-                        Staff tg = context.Staffs.Find(id);
+                        var tg = context.Staffs.Find(id);
                         context.Staffs.Remove(tg);
                         context.SaveChanges();
                         MessageBox.Show("Deleted");
@@ -199,11 +200,20 @@ namespace SoftWare_Engineering.GUI
             barSave.Enabled = false;
             barCancel.Enabled = false;
         }
-
+        /// <summary>
+        /// Danh sách nhân viên
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Staff_Report report = new Staff_Report();
             report.Show();
+        }
+
+        private void barCalendar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

@@ -140,7 +140,9 @@ namespace SoftWare_Engineering
 
         private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Close();
+            Main main = new Main();
+            this.Hide();
+            main.Show();
         }
     }
 }

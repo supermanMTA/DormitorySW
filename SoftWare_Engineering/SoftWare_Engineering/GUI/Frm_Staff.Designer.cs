@@ -475,6 +475,7 @@
             this.barCalendar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barCalendar.ImageOptions.Image")));
             this.barCalendar.Name = "barCalendar";
             this.barCalendar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barCalendar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barCalendar_ItemClick);
             // 
             // barCancel
             // 

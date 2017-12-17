@@ -36,7 +36,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SoftWare_Engineering.Properties.Resources.LogoHV;
-            this.pictureBox1.Location = new System.Drawing.Point(205, 97);
+            this.pictureBox1.Location = new System.Drawing.Point(276, 117);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(809, 152);
             this.pictureBox1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(352, 292);
+            this.label1.Location = new System.Drawing.Point(444, 313);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(572, 31);
             this.label1.TabIndex = 1;

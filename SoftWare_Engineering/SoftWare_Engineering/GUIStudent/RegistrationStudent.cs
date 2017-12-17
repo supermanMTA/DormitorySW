@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using SoftWare_Engineering.Data;
 namespace SoftWare_Engineering.Management_Student
 {
     public partial class ListRegistration : Form
     {
         MyContext context = new MyContext();
-        public ListRegistration()
+        User user = new User();
+        public ListRegistration(User u)
         {
             InitializeComponent();
+            user =u;
         }
         private void LoadControl()
         {
@@ -43,6 +44,7 @@ namespace SoftWare_Engineering.Management_Student
             rf.NameMother = txtNameMother.Text;
             rf.BirthDayOfMother = dateBirthMother.Value;
             rf.JobOfMother = txtJobMother.Text;
+            rf.Email = user.Email;
             return rf;
         }
         private void button2_Click(object sender, EventArgs e)

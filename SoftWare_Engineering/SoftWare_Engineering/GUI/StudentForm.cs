@@ -193,9 +193,6 @@ namespace SoftWare_Engineering.GUI
                 {
                     MessageBox.Show("Failed\n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-            
-
             barEdit.Enabled = true;
             BarNew.Enabled = true;
             barDelete.Enabled = true;

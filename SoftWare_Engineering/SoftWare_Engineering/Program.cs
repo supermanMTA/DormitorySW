@@ -20,7 +20,7 @@ namespace SoftWare_Engineering
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new Form1());
+            Application.Run(new Main());
         }
     }
 }

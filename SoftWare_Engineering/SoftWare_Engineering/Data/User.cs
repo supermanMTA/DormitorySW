@@ -10,10 +10,13 @@ namespace SoftWare_Engineering.Data
     public partial class User
     {
         [Key]
-        [StringLength(10)]
-        public string Username { get; set; }
+        [StringLength(50)]
+        public string Email { get; set; }
 
+        [Required]
         [StringLength(10)]
-        public string Password { get; set; }
+        public string Pass { get; set; }
+
+        public int Object { get; set; }
     }
 }

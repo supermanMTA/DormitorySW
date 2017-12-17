@@ -249,7 +249,6 @@
             // 
             this.navBarGroup1.Caption = "Detail";
             this.navBarGroup1.ControlContainer = this.navBarGroupControlContainer1;
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.GroupClientHeight = 284;
             this.navBarGroup1.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.navBarGroup1.Name = "navBarGroup1";

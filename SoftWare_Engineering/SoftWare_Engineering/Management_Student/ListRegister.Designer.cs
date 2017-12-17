@@ -31,6 +31,9 @@
             this.gridRe = new DevExpress.XtraGrid.GridControl();
             this.gridRegister = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbbRoom = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -44,9 +47,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbbRoom = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridRe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegister)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -94,6 +94,34 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Information";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(407, 184);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(97, 39);
+            this.button2.TabIndex = 60;
+            this.button2.Text = "Add";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(266, 158);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 13);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "Select room for this student";
+            // 
+            // cbbRoom
+            // 
+            this.cbbRoom.Enabled = false;
+            this.cbbRoom.FormattingEnabled = true;
+            this.cbbRoom.Location = new System.Drawing.Point(407, 155);
+            this.cbbRoom.Name = "cbbRoom";
+            this.cbbRoom.Size = new System.Drawing.Size(188, 21);
+            this.cbbRoom.TabIndex = 58;
             // 
             // button1
             // 
@@ -211,34 +239,6 @@
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 30;
             this.label2.Text = "Student Name";
-            // 
-            // cbbRoom
-            // 
-            this.cbbRoom.Enabled = false;
-            this.cbbRoom.FormattingEnabled = true;
-            this.cbbRoom.Location = new System.Drawing.Point(407, 155);
-            this.cbbRoom.Name = "cbbRoom";
-            this.cbbRoom.Size = new System.Drawing.Size(188, 21);
-            this.cbbRoom.TabIndex = 58;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(266, 158);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 13);
-            this.label1.TabIndex = 59;
-            this.label1.Text = "Select room for this student";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(407, 184);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 39);
-            this.button2.TabIndex = 60;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ListRegister
             // 

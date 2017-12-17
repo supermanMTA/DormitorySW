@@ -7,14 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoftWare_Engineering.Data;
 
 namespace SoftWare_Engineering.GUIStudent
 {
     public partial class Extension : Form
     {
-        public Extension()
+        MyContext context = new MyContext();
+        User user = new User();
+        public Extension(User u)
         {
+            user = u;
             InitializeComponent();
+        }
+
+        private void btnExtend_Click(object sender, EventArgs e)
+        {
+            Student st = context.Students.Where(p => p.Email == user.Email).FirstOrDefault();
+            var contract = context.Contracts.Where(p => p.ID_Student == st.ID).FirstOrDefault();
+            contract.DateStart = DateTime.Now;
+            if (cbbTime.Text == "1 năm") contract.DateEnd = DateTime.Now;
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

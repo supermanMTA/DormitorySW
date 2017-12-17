@@ -1,6 +1,6 @@
 ﻿namespace SoftWare_Engineering
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelMain = new System.Windows.Forms.Panel();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnLogin = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRegis = new DevExpress.XtraBars.BarButtonItem();
+            this.bar = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnLogout = new DevExpress.XtraBars.BarButtonItem();
             this.btnStudent = new DevExpress.XtraBars.BarButtonItem();
             this.btnStaff = new DevExpress.XtraBars.BarButtonItem();
             this.btnDorm = new DevExpress.XtraBars.BarButtonItem();
@@ -45,7 +45,7 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnInfor = new DevExpress.XtraBars.BarButtonItem();
             this.btnRegistration = new DevExpress.XtraBars.BarButtonItem();
             this.barExtension = new DevExpress.XtraBars.BarButtonItem();
             this.btnStudentM = new DevExpress.XtraBars.BarButtonItem();
@@ -78,7 +78,7 @@
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup10,
-            this.ribbonPageGroup11});
+            this.bar});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "System";
             // 
@@ -91,35 +91,39 @@
             // 
             this.btnLogin.Caption = "Login";
             this.btnLogin.Id = 15;
-            this.btnLogin.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.Login_icon__1_;
+            this.btnLogin.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.lock_open_blue;
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnLogin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogin_ItemClick);
             // 
             // ribbonPageGroup10
             // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnRegis);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             // 
-            // barButtonItem5
+            // btnRegis
             // 
-            this.barButtonItem5.Caption = "Registration";
-            this.barButtonItem5.Id = 16;
-            this.barButtonItem5.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.Login_Registration_icon;
-            this.barButtonItem5.Name = "barButtonItem5";
-            this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnRegis.Caption = "Registration";
+            this.btnRegis.Id = 16;
+            this.btnRegis.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.Login_Registration_icon;
+            this.btnRegis.Name = "btnRegis";
+            this.btnRegis.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnRegis.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRegis_ItemClick);
             // 
-            // ribbonPageGroup11
+            // bar
             // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.bar.ItemLinks.Add(this.btnLogout);
+            this.bar.Name = "bar";
             // 
-            // barButtonItem7
+            // btnLogout
             // 
-            this.barButtonItem7.Caption = "Log out";
-            this.barButtonItem7.Id = 17;
-            this.barButtonItem7.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.Logout_icon;
-            this.barButtonItem7.Name = "barButtonItem7";
-            this.barButtonItem7.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnLogout.Caption = "Log out";
+            this.btnLogout.Enabled = false;
+            this.btnLogout.Id = 17;
+            this.btnLogout.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.Apps_Dialog_Logout_icon;
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogout_ItemClick);
             // 
             // btnStudent
             // 
@@ -185,7 +189,7 @@
             this.btnStaff,
             this.btnDorm,
             this.btnAccount,
-            this.barButtonItem1,
+            this.btnInfor,
             this.btnRegistration,
             this.barExtension,
             this.btnStudentM,
@@ -193,8 +197,8 @@
             this.btnDormM,
             this.btnAccountM,
             this.btnLogin,
-            this.barButtonItem5,
-            this.barButtonItem7});
+            this.btnRegis,
+            this.btnLogout});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 18;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -206,18 +210,20 @@
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.ribbonControl1.Size = new System.Drawing.Size(1296, 143);
             // 
-            // barButtonItem1
+            // btnInfor
             // 
-            this.barButtonItem1.Caption = "My Information ";
-            this.barButtonItem1.Id = 8;
-            this.barButtonItem1.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.personal_information_icon;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            this.btnInfor.Caption = "My Information ";
+            this.btnInfor.Enabled = false;
+            this.btnInfor.Id = 8;
+            this.btnInfor.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.personal_information_icon;
+            this.btnInfor.Name = "btnInfor";
+            this.btnInfor.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnInfor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // btnRegistration
             // 
             this.btnRegistration.Caption = "Registration";
+            this.btnRegistration.Enabled = false;
             this.btnRegistration.Id = 9;
             this.btnRegistration.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistration.ImageOptions.Image")));
             this.btnRegistration.Name = "btnRegistration";
@@ -227,6 +233,7 @@
             // barExtension
             // 
             this.barExtension.Caption = "Extension contract";
+            this.barExtension.Enabled = false;
             this.barExtension.Id = 10;
             this.barExtension.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.Contract_icon;
             this.barExtension.Name = "barExtension";
@@ -236,6 +243,7 @@
             // btnStudentM
             // 
             this.btnStudentM.Caption = "Student";
+            this.btnStudentM.Enabled = false;
             this.btnStudentM.Id = 11;
             this.btnStudentM.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.Student_3_icon;
             this.btnStudentM.Name = "btnStudentM";
@@ -245,6 +253,7 @@
             // btnStaffM
             // 
             this.btnStaffM.Caption = "Staff";
+            this.btnStaffM.Enabled = false;
             this.btnStaffM.Id = 12;
             this.btnStaffM.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.Manager_icon;
             this.btnStaffM.Name = "btnStaffM";
@@ -254,6 +263,7 @@
             // btnDormM
             // 
             this.btnDormM.Caption = "Dormitory";
+            this.btnDormM.Enabled = false;
             this.btnDormM.Id = 13;
             this.btnDormM.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.House_icon;
             this.btnDormM.Name = "btnDormM";
@@ -277,7 +287,7 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnInfor);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // ribbonPageGroup3
@@ -327,7 +337,7 @@
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "ribbonPageGroup9";
             // 
-            // Form1
+            // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,7 +345,7 @@
             this.ClientSize = new System.Drawing.Size(1296, 694);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.ribbonControl1);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DORMITORY MANAGEMENT SOFTWARE";
@@ -360,7 +370,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnInfor;
         private DevExpress.XtraBars.BarButtonItem btnRegistration;
         private DevExpress.XtraBars.BarButtonItem barExtension;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
@@ -377,9 +387,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem btnRegis;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup bar;
+        private DevExpress.XtraBars.BarButtonItem btnLogout;
     }
 }
 

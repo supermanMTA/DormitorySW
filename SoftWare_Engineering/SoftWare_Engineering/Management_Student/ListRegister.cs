@@ -28,7 +28,7 @@ namespace SoftWare_Engineering.Management_Student
                            StudentName = p.Name,
                            DateOfBirth = dateTimeDOB.Value,
                            Gender=p.Gender,
-                           ObjectS=p.Object,
+                           Object=p.Object,
                            ClassN=p.ID_Class,
                            Address=p.Address
 
@@ -51,7 +51,7 @@ namespace SoftWare_Engineering.Management_Student
                 txtName.Text = gridRegister.GetFocusedRowCellValue("StudentName").ToString();
                 cbbClass.Text = gridRegister.GetFocusedRowCellValue("ClassN").ToString();
                 cbbGender.Text = gridRegister.GetFocusedRowCellValue("Gender").ToString();
-                cbbObject.Text = gridRegister.GetFocusedRowCellValue("ObkectS").ToString();
+                cbbObject.Text = gridRegister.GetFocusedRowCellValue("Object").ToString();
                 txtAddress.Text = gridRegister.GetFocusedRowCellValue("Address").ToString();
                 dateTimeDOB.Text = gridRegister.GetFocusedRowCellValue("DateOfBirth").ToString();
             }
@@ -98,6 +98,7 @@ namespace SoftWare_Engineering.Management_Student
                 st.Class_ID = RG.ID_Class;
                 st.DateOfBirth = RG.DateOfBirth;
                 st.Gender = RG.Gender;
+                st.Email = RG.Email;
                 context.Students.Add(st);
                 context.SaveChanges();
                 context.RegistrationForms.Remove(RG);

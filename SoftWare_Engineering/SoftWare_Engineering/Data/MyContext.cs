@@ -8,7 +8,7 @@ namespace SoftWare_Engineering.Data
     public partial class MyContext : DbContext
     {
         public MyContext()
-            : base("name=MyContext5")
+            : base("name=MyContext1")
         {
         }
 
@@ -45,16 +45,20 @@ namespace SoftWare_Engineering.Data
                 .Property(e => e.Name)
                 .IsFixedLength();
 
+            modelBuilder.Entity<Student>()
+                .Property(e => e.Email)
+                .IsUnicode(false);
+
             modelBuilder.Entity<TypeRoom>()
                 .Property(e => e.Name)
                 .IsFixedLength();
 
             modelBuilder.Entity<User>()
-                .Property(e => e.Username)
-                .IsFixedLength();
+                .Property(e => e.Email)
+                .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .Property(e => e.Password)
+                .Property(e => e.Pass)
                 .IsFixedLength();
         }
     }

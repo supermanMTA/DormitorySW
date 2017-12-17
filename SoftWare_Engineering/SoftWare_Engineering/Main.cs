@@ -7,16 +7,48 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using SoftWare_Engineering.GUI;
+using SoftWare_Engineering.Data;
 //using SoftWare_Engineering.Report;
 using SoftWare_Engineering.Management_Student;
 using SoftWare_Engineering.GUIStudent;
 namespace SoftWare_Engineering
 {
-    public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Main : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public Form1()
+        User user = new User();
+        MyContext context = new MyContext();
+        public Main()
         {
             InitializeComponent();
+        }
+        public Main(User u)
+        {
+            InitializeComponent();
+            user = u;
+            btnLogin.Enabled = false;
+            btnLogout.Enabled = true;
+            btnRegis.Enabled = false;
+        }
+        public  void LoadUser()
+        {
+            if (user != null)
+            {
+                if (user.Object == 1)
+                {
+                    btnDormM.Enabled = true;
+                    btnStaffM.Enabled = true;
+                    btnStudentM.Enabled = true;                    
+                }
+                if(user.Object==2)
+                {                   
+                    var student = context.Students.Where(p => p.Email == user.Email).FirstOrDefault();
+                    if (student != null) { btnInfor.Enabled = true; barExtension.Enabled = true; btnRegistration.Enabled = false; }
+                    else { btnInfor.Enabled = false; btnRegistration.Enabled = true;barExtension.Enabled = false; }
+                    
+                }
+            }
+            else { return; }
+           
         }
         private void btnStudentM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -52,7 +84,7 @@ namespace SoftWare_Engineering
 
         private void btnRegistration_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ListRegistration list = new ListRegistration();
+            ListRegistration list = new ListRegistration(user);
             panelMain.Controls.Clear();
             list.TopLevel = false;
             list.Dock = DockStyle.Fill;
@@ -62,13 +94,28 @@ namespace SoftWare_Engineering
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Information list = new Information(user);
+            panelMain.Controls.Clear();
+            list.TopLevel = false;
+            list.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(list);
+            list.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Start nv = new Start();
+            panelMain.Controls.Clear();
+            nv.TopLevel = false;
+            nv.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(nv);
+            nv.Show();
+            LoadUser();
+        }
 
+        private void barExtension_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Extension nv = new Extension(user);
             panelMain.Controls.Clear();
             nv.TopLevel = false;
             nv.Dock = DockStyle.Fill;
@@ -76,15 +123,24 @@ namespace SoftWare_Engineering
             nv.Show();
         }
 
-        private void barExtension_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Extension nv = new Extension();
+            this.Hide();
+            Login lg = new Login();
+            lg.ShowDialog();
+        }
 
-            panelMain.Controls.Clear();
-            nv.TopLevel = false;
-            nv.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(nv);
-            nv.Show();
+        private void btnRegis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Hide();
+            Regis regis = new Regis();
+            regis.ShowDialog();
+           
+        }
+
+        private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }

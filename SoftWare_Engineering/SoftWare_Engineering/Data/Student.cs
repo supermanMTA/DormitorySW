@@ -41,5 +41,9 @@ namespace SoftWare_Engineering.Data
         public int? Class_ID { get; set; }
 
         public int? Room_ID { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Email { get; set; }
     }
 }

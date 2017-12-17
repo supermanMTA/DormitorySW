@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbbObject = new System.Windows.Forms.ComboBox();
             this.cbbGender = new System.Windows.Forms.ComboBox();
             this.cbbClass = new System.Windows.Forms.ComboBox();
@@ -77,6 +79,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.txtEmail);
+            this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Controls.Add(this.cbbObject);
             this.groupControl1.Controls.Add(this.cbbGender);
             this.groupControl1.Controls.Add(this.cbbClass);
@@ -102,6 +106,24 @@
             this.groupControl1.Size = new System.Drawing.Size(430, 557);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Information of Student";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(165, 479);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(190, 21);
+            this.txtEmail.TabIndex = 51;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(98, 479);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 16);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "Email";
             // 
             // cbbObject
             // 
@@ -485,7 +507,7 @@
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListRegistration";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListRegistration";
             this.Load += new System.EventHandler(this.ListRegistration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -542,5 +564,7 @@
         private System.Windows.Forms.TextBox txtNameFather;
         private System.Windows.Forms.ComboBox cbbObject;
         private System.Windows.Forms.ComboBox cbbGender;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -60,7 +60,6 @@
             this.BtnDelete = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.btnCancel = new System.Windows.Forms.ToolStripButton();
-            this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridBill)).BeginInit();
@@ -101,6 +100,7 @@
             // 
             // txtRoom
             // 
+            this.txtRoom.Enabled = false;
             this.txtRoom.Location = new System.Drawing.Point(129, 89);
             this.txtRoom.Name = "txtRoom";
             this.txtRoom.Size = new System.Drawing.Size(178, 20);
@@ -234,7 +234,7 @@
             // 
             // txtWater
             // 
-            this.txtWater.Location = new System.Drawing.Point(450, 134);
+            this.txtWater.Location = new System.Drawing.Point(451, 126);
             this.txtWater.Name = "txtWater";
             this.txtWater.Size = new System.Drawing.Size(178, 20);
             this.txtWater.TabIndex = 9;
@@ -248,6 +248,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(129, 46);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(178, 20);
@@ -257,7 +258,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(356, 138);
+            this.label6.Location = new System.Drawing.Point(356, 130);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 16);
             this.label6.TabIndex = 5;
@@ -340,11 +341,10 @@
             this.BtnDelete,
             this.btnSave,
             this.btnCancel,
-            this.btnExit,
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(129, 245);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(371, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(382, 27);
             this.toolStrip1.TabIndex = 90;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -356,6 +356,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(57, 24);
             this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -365,6 +366,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(55, 24);
             this.btnEdit.Text = "Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // BtnDelete
             // 
@@ -374,38 +376,36 @@
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(73, 24);
             this.BtnDelete.Text = "Delete";
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // btnSave
             // 
             this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = global::SoftWare_Engineering.Properties.Resources._04_download_1281;
             this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(44, 24);
+            this.btnSave.Size = new System.Drawing.Size(60, 24);
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Enabled = false;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Image = global::SoftWare_Engineering.Properties.Resources.Cancel;
             this.btnCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(57, 24);
+            this.btnCancel.Size = new System.Drawing.Size(73, 24);
             this.btnCancel.Text = "Cancel";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(37, 24);
-            this.btnExit.Text = "Exit";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // toolStripButton1
             // 
+            this.toolStripButton1.Image = global::SoftWare_Engineering.Properties.Resources.printer_green_icon;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(36, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(52, 24);
             this.toolStripButton1.Text = "Print";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -413,7 +413,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 523);
+            this.ClientSize = new System.Drawing.Size(722, 523);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.gridBill);
             this.Controls.Add(this.groupBox1);
@@ -461,7 +461,6 @@
         private System.Windows.Forms.ToolStripButton BtnDelete;
         private System.Windows.Forms.ToolStripButton btnSave;
         private System.Windows.Forms.ToolStripButton btnCancel;
-        private System.Windows.Forms.ToolStripButton btnExit;
         private System.Windows.Forms.ComboBox cbbYear;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtSurcharge;

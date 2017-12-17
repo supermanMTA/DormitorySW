@@ -142,6 +142,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Domitori_MSDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dorm\Assessment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dorm\Assessment.Designer.cs">
+      <DependentUpon>Assessment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dorm\Bill_M.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +296,9 @@
     <Compile Include="Report\StudentReport.Designer.cs">
       <DependentUpon>StudentReport.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dorm\Assessment.resx">
+      <DependentUpon>Assessment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dorm\Bill_M.resx">
       <DependentUpon>Bill_M.cs</DependentUpon>
     </EmbeddedResource>
@@ -559,6 +568,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Apps-Dialog-Logout-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\04_download-1281.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

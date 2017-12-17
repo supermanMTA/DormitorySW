@@ -21,7 +21,7 @@ namespace SoftWare_Engineering.Report
 
         private void StudentReport_Load(object sender, EventArgs e)
         {
-            dormMSDataSetBindingSource.DataSource = context.Students.ToList();
+            dormMSDataSetBindingSource.DataSource = context.Students.OrderBy(p=>p.Room_ID).ToList();
             this.reportViewer1.RefreshReport();
             
         }

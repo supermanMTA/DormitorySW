@@ -41,7 +41,7 @@
             this.navBarGroupControlContainer1 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
             this.navBarGroupControlContainer2 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
-            this.butBCTDI = new System.Windows.Forms.Button();
+            this.btnAssessment = new System.Windows.Forms.Button();
             this.navBarGroupControlContainer4 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.button1 = new System.Windows.Forms.Button();
             this.navBCTD = new DevExpress.XtraNavBar.NavBarGroup();
@@ -210,19 +210,20 @@
             // 
             this.navBarGroupControlContainer2.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.navBarGroupControlContainer2.Appearance.Options.UseBackColor = true;
-            this.navBarGroupControlContainer2.Controls.Add(this.butBCTDI);
+            this.navBarGroupControlContainer2.Controls.Add(this.btnAssessment);
             this.navBarGroupControlContainer2.Name = "navBarGroupControlContainer2";
             this.navBarGroupControlContainer2.Size = new System.Drawing.Size(288, 24);
             this.navBarGroupControlContainer2.TabIndex = 1;
             // 
-            // butBCTDI
+            // btnAssessment
             // 
-            this.butBCTDI.Location = new System.Drawing.Point(62, 0);
-            this.butBCTDI.Name = "butBCTDI";
-            this.butBCTDI.Size = new System.Drawing.Size(149, 23);
-            this.butBCTDI.TabIndex = 0;
-            this.butBCTDI.Text = "Assessment";
-            this.butBCTDI.UseVisualStyleBackColor = true;
+            this.btnAssessment.Location = new System.Drawing.Point(62, 0);
+            this.btnAssessment.Name = "btnAssessment";
+            this.btnAssessment.Size = new System.Drawing.Size(149, 23);
+            this.btnAssessment.TabIndex = 0;
+            this.btnAssessment.Text = "Assessment";
+            this.btnAssessment.UseVisualStyleBackColor = true;
+            this.btnAssessment.Click += new System.EventHandler(this.btnAssessment_Click);
             // 
             // navBarGroupControlContainer4
             // 
@@ -230,7 +231,7 @@
             this.navBarGroupControlContainer4.Appearance.Options.UseBackColor = true;
             this.navBarGroupControlContainer4.Controls.Add(this.button1);
             this.navBarGroupControlContainer4.Name = "navBarGroupControlContainer4";
-            this.navBarGroupControlContainer4.Size = new System.Drawing.Size(288, 40);
+            this.navBarGroupControlContainer4.Size = new System.Drawing.Size(288, 32);
             this.navBarGroupControlContainer4.TabIndex = 2;
             // 
             // button1
@@ -256,7 +257,7 @@
             this.navKQDT.Caption = "Bill";
             this.navKQDT.ControlContainer = this.navBarGroupControlContainer4;
             this.navKQDT.Expanded = true;
-            this.navKQDT.GroupClientHeight = 44;
+            this.navKQDT.GroupClientHeight = 36;
             this.navKQDT.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.navKQDT.Name = "navKQDT";
             // 
@@ -642,7 +643,7 @@
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer1;
         private System.Windows.Forms.DataGridView dgvStudent;
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer2;
-        private System.Windows.Forms.Button butBCTDI;
+        private System.Windows.Forms.Button btnAssessment;
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer4;
         private System.Windows.Forms.Button button1;
         private DevExpress.XtraNavBar.NavBarGroup navBCTD;

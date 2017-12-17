@@ -192,7 +192,7 @@ namespace SoftWare_Engineering.GUI
             barCancel.Enabled = false;
         }
 
-        #endregion
+     
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -200,5 +200,13 @@ namespace SoftWare_Engineering.GUI
             Bill_M bill = new Bill_M(id);
             bill.ShowDialog();
         }
+
+        private void btnAssessment_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(griDorm.GetFocusedRowCellValue("ID").ToString());
+            Assessment ass = new Assessment(id);
+            ass.ShowDialog();
+        }
+        #endregion
     }
 }

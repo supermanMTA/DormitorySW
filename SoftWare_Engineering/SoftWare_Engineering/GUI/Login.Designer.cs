@@ -71,7 +71,7 @@
             this.groupBox1.Size = new System.Drawing.Size(384, 168);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Đăng nhập";
+            this.groupBox1.Text = "LOGIN";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnCancel
@@ -150,7 +150,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(384, 54);
             this.label3.TabIndex = 3;
-            this.label3.Text = "PHẦN MỀM QUẢN LÝ KÝ TÚC XÁ SINH VIÊN";
+            this.label3.Text = "DORMITORY MANAGEMENT SOFTWARE";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Login

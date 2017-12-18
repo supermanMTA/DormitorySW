@@ -24,7 +24,7 @@ namespace SoftWare_Engineering.Dorm
         #region Load DL
         public void LoadDL()
         {
-            var listAss = from p in context.RoomAssessments.Where(p => p.ID_Room == id).ToList()
+            var listAss = from p in context.RoomAssessments.Where(p => p.ID_Room == id)
                           select new
                           {
                               IDOfAssessment = p.ID,
@@ -32,9 +32,8 @@ namespace SoftWare_Engineering.Dorm
                               IDOfStaff = p.ID_Staff,
                               IDOfYear = p.ID_Year,
                               Purport = p.Purport,
-
                           };
-            gridAss.DataSource = listAss;
+            gridAss.DataSource = listAss.ToList();
         }
         public void LoadControl()
         {
@@ -55,8 +54,8 @@ namespace SoftWare_Engineering.Dorm
         #region Lấy Dl
         public void GetByForm(RoomAssessment am)
         {
-            am.ID_Staff =(int) cbbStaff.SelectedIndex;
-            am.ID_Year = (int)cbbYear.SelectedIndex;
+            am.ID_Staff =(int) cbbStaff.SelectedValue;
+            am.ID_Year = (int)cbbYear.SelectedValue;
             am.Purport = txtPurport.Text;
             am.ID_Room = id;
         }
@@ -129,7 +128,7 @@ namespace SoftWare_Engineering.Dorm
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
             groupBox1.Enabled = true;
-            txtPurport.Clear();
+           
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -172,7 +171,7 @@ namespace SoftWare_Engineering.Dorm
                     int id =Convert.ToInt32( gridAssessment.GetFocusedRowCellValue("IDOfAssessment").ToString());
                     var tg = context.RoomAssessments.Where(p => p.ID == id).FirstOrDefault();
                     GetByForm(tg);
-                    context.RoomAssessments.Add(tg);
+                //    context.RoomAssessments.Add(tg);
                     context.SaveChanges();
                     MessageBox.Show("Done");
                     LoadDL();

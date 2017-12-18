@@ -121,23 +121,33 @@ namespace SoftWare_Engineering.GUI
 
         private void barDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Do you want delete this room?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (DialogResult.Yes == dr)
+            int id = (int)griDorm.GetFocusedRowCellValue("ID");
+            var listST = context.Students.Where(p => p.Room_ID == id).FirstOrDefault();
+            if (listST != null)
             {
+                MessageBox.Show("This room does not empty", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Do you want delete this room?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult.Yes == dr)
+                {
 
-                try
-                {
-                    int id = (int)griDorm.GetFocusedRowCellValue("ID");
-                   Room tg = context.Rooms.Find(id);
-                    context.Rooms.Remove(tg);
-                    context.SaveChanges();
-                    MessageBox.Show("Deleted");
-                    LoaddgvDorm();
+                    try
+                    {
+                        // int id = (int)griDorm.GetFocusedRowCellValue("ID");
+                        Room tg = context.Rooms.Find(id);
+                        context.Rooms.Remove(tg);
+                        context.SaveChanges();
+                        MessageBox.Show("Deleted");
+                        LoaddgvDorm();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Failed\n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed\n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            
             }
         }
 

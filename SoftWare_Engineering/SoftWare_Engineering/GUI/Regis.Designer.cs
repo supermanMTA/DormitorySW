@@ -131,7 +131,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(384, 54);
             this.label4.TabIndex = 4;
-            this.label4.Text = "PHẦN MỀM QUẢN LÝ KÝ TÚC XÁ SINH VIÊN";
+            this.label4.Text = "DORMITORY MANAGEMENT SOFTWARE";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Regis

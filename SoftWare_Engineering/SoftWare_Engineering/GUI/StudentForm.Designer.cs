@@ -611,7 +611,6 @@
             this.barSort.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSort.ImageOptions.Image")));
             this.barSort.Name = "barSort";
             this.barSort.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-//            this.barSort.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSort_ItemClick);
             // 
             // barCFM
             // 

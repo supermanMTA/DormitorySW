@@ -24,11 +24,11 @@ namespace SoftWare_Engineering.GUI
 
             if (user == null)
             {
-                MessageBox.Show("Email or Password not ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Email or Password not ", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Successful", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Main form = new Main(user);
             this.Hide();
             form.ShowDialog();

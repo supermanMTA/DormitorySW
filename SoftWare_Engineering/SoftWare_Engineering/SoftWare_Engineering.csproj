@@ -134,7 +134,6 @@
     <Compile Include="Data\SchoolYear.cs" />
     <Compile Include="Data\Staff.cs" />
     <Compile Include="Data\Student.cs" />
-    <Compile Include="Data\sysdiagram.cs" />
     <Compile Include="Data\TypeRoom.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Domitori_MSDataSet1.Designer.cs">

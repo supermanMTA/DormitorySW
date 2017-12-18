@@ -115,6 +115,7 @@
             this.gridFaculty.GridControl = this.gridF;
             this.gridFaculty.Name = "gridFaculty";
             this.gridFaculty.OptionsFind.AlwaysVisible = true;
+            this.gridFaculty.OptionsView.ShowGroupPanel = false;
             this.gridFaculty.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridFaculty_FocusedRowChanged);
             // 
             // toolStrip1

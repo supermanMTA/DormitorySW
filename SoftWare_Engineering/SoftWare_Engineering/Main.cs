@@ -42,7 +42,19 @@ namespace SoftWare_Engineering
                 if(user.Object==2)
                 {                   
                     var student = context.Students.Where(p => p.Email == user.Email).FirstOrDefault();
-                    if (student != null) { btnInfor.Enabled = true; barExtension.Enabled = true; btnRegistration.Enabled = false; }
+                    if (student != null)
+                    {
+                        var contract = context.Contracts.Where(p => p.ID_Student == student.ID).FirstOrDefault();
+                        if (contract.DateEnd>DateTime.Now)
+                        {
+                            btnInfor.Enabled = true; barExtension.Enabled = false; btnRegistration.Enabled = false;
+                        }
+                        else
+                        {
+                            btnInfor.Enabled = true; barExtension.Enabled = true; btnRegistration.Enabled = false;
+                        }
+                        
+                    }
                     else { btnInfor.Enabled = false; btnRegistration.Enabled = true;barExtension.Enabled = false; }
                     
                 }
@@ -50,6 +62,17 @@ namespace SoftWare_Engineering
             else { return; }
            
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Start nv = new Start();
+            panelMain.Controls.Clear();
+            nv.TopLevel = false;
+            nv.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(nv);
+            nv.Show();
+            LoadUser();
+        }
+        #region Manager
         private void btnStudentM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             StudentForm st = new StudentForm();
@@ -81,7 +104,9 @@ namespace SoftWare_Engineering
             panelMain.Controls.Add(nv);
             nv.Show();
         }
+        #endregion
 
+        #region Student
         private void btnRegistration_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ListRegistration list = new ListRegistration(user);
@@ -102,17 +127,6 @@ namespace SoftWare_Engineering
             list.Show();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            Start nv = new Start();
-            panelMain.Controls.Clear();
-            nv.TopLevel = false;
-            nv.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(nv);
-            nv.Show();
-            LoadUser();
-        }
-
         private void barExtension_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Extension nv = new Extension(user);
@@ -122,7 +136,9 @@ namespace SoftWare_Engineering
             panelMain.Controls.Add(nv);
             nv.Show();
         }
+        #endregion
 
+        #region System 
         private void btnLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Hide();
@@ -144,5 +160,6 @@ namespace SoftWare_Engineering
             this.Hide();
             main.Show();
         }
+        #endregion
     }
 }

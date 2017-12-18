@@ -17,13 +17,27 @@ namespace SoftWare_Engineering.Management_Student
         public ListRegistration(User u)
         {
             InitializeComponent();
-            user =u;
+            user = u;
         }
         private void LoadControl()
         {
             cbbClass.DataSource = context.Classes.ToList();
             cbbClass.ValueMember = "ID";
             cbbClass.DisplayMember = "Name";
+        }
+
+        public bool check()
+        {
+            double test = 0;
+            if (double.TryParse(txtIdentity.Text, out test) == false)
+            {
+                MessageBox.Show("format identity card number incorrect"); return false;
+            }
+            if (double.TryParse(txtPhone.Text, out test) == false)
+            {
+                MessageBox.Show("phone number format is not correct"); return false;
+            }
+            else return true;
         }
         private RegistrationForm GetByForm()
         {
@@ -37,7 +51,7 @@ namespace SoftWare_Engineering.Management_Student
             rf.Nation = cbbNation.Text;
             rf.Religion = cbbReligion.Text;
             rf.PhoneNumber = txtPhone.Text;
-            rf.ID_Class = Convert.ToInt32( cbbClass.SelectedValue);
+            rf.ID_Class = Convert.ToInt32(cbbClass.SelectedValue);
             rf.NameFather = txtNameFather.Text;
             rf.BirthDayOfFather = dateBirthFather.Value;
             rf.JobOfFather = txtJobFather.Text;
@@ -49,27 +63,29 @@ namespace SoftWare_Engineering.Management_Student
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            try
+            if (check() == true)
             {
-                RegistrationForm tg = GetByForm();
-                context.RegistrationForms.Add(tg);
-                context.SaveChanges();
-                MessageBox.Show("Done");
-                txtAddress.Clear();
-                txtIdentity.Clear();
-                txtJobFather.Clear();
-                txtJobMother.Clear();
-                txtNameFather.Clear();
-                txtNameMother.Clear();
-                txtPhone.Clear();
-                txtStudentName.Clear();
+                try
+                {
+                    RegistrationForm tg = GetByForm();
+                    context.RegistrationForms.Add(tg);
+                    context.SaveChanges();
+                    MessageBox.Show("Done");
+                    txtAddress.Clear();
+                    txtIdentity.Clear();
+                    txtJobFather.Clear();
+                    txtJobMother.Clear();
+                    txtNameFather.Clear();
+                    txtNameMother.Clear();
+                    txtPhone.Clear();
+                    txtStudentName.Clear();
 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -82,12 +98,13 @@ namespace SoftWare_Engineering.Management_Student
             txtNameMother.Clear();
             txtPhone.Clear();
             txtStudentName.Clear();
-            
+
         }
 
         private void ListRegistration_Load(object sender, EventArgs e)
         {
             LoadControl();
         }
+
     }
 }

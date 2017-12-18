@@ -86,9 +86,6 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gridDorm = new DevExpress.XtraGrid.GridControl();
             this.griDorm = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl2)).BeginInit();
@@ -204,10 +201,6 @@
             // dgvStudent
             // 
             this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.StudentID,
-            this.StudentName});
             this.dgvStudent.Location = new System.Drawing.Point(4, 0);
             this.dgvStudent.Name = "dgvStudent";
             this.dgvStudent.Size = new System.Drawing.Size(278, 126);
@@ -611,24 +604,6 @@
             this.griDorm.OptionsView.ShowGroupPanel = false;
             this.griDorm.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.griDorm_FocusedRowChanged);
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.Width = 40;
-            // 
-            // StudentID
-            // 
-            this.StudentID.HeaderText = "StudentID";
-            this.StudentID.Name = "StudentID";
-            this.StudentID.Width = 70;
-            // 
-            // StudentName
-            // 
-            this.StudentName.HeaderText = "StudentName";
-            this.StudentName.Name = "StudentName";
-            this.StudentName.Width = 150;
-            // 
             // Frm_Dorm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -716,8 +691,5 @@
         private System.Windows.Forms.ComboBox cbbTypeRoom;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbbDorm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
     }
 }

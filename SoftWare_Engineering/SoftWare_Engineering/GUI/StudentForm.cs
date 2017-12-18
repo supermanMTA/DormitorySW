@@ -17,8 +17,8 @@ namespace SoftWare_Engineering.GUI
     {
         MyContext context = new MyContext();
         bool ok = true;
-       
-        
+
+        #region Load DL
         public StudentForm()
         {
             InitializeComponent();
@@ -98,7 +98,9 @@ namespace SoftWare_Engineering.GUI
             //    cbbRoom.DataSource = context.Rooms.Where(p => p.ID_TypeR == idroom).ToList();
             //}
         }
+        #endregion
 
+        #region Lấy DL
         private Student getStudentByForm(Student st)
         {
             st.Address = txtAddress.Text;
@@ -124,7 +126,9 @@ namespace SoftWare_Engineering.GUI
             Re.Relationship = txtRelationship.Text;
             return Re;
         }
+        #endregion
 
+        #region Sự kiện
         private void gridStudent_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (gridStudent.FocusedRowHandle >= 0)
@@ -226,6 +230,8 @@ namespace SoftWare_Engineering.GUI
             BarAdd.Enabled = true;
             barSave.Enabled = false;
             barCancel.Enabled = false;
+            groupBox1.Enabled = false;
+            groupBox2.Enabled = false;
         }
 
         private void barDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -259,12 +265,7 @@ namespace SoftWare_Engineering.GUI
             }
         }
 
-        private void barOutput_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            StudentReport report = new StudentReport();
-            report.Show();
-            
-        }
+        
 
         private void btnCompliment_Click(object sender, EventArgs e)
         {
@@ -421,6 +422,17 @@ namespace SoftWare_Engineering.GUI
             contract.ShowDialog();
         }
 
-       
+        #endregion
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            StudentReport report = new StudentReport(2);
+            report.Show();
+        }
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            StudentReport report = new StudentReport(1);
+            report.Show();
+        }
     }
 }

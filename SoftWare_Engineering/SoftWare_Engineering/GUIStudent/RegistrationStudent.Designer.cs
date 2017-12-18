@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbbObject = new System.Windows.Forms.ComboBox();
             this.cbbGender = new System.Windows.Forms.ComboBox();
             this.cbbClass = new System.Windows.Forms.ComboBox();
@@ -79,8 +77,6 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.txtEmail);
-            this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Controls.Add(this.cbbObject);
             this.groupControl1.Controls.Add(this.cbbGender);
             this.groupControl1.Controls.Add(this.cbbClass);
@@ -101,29 +97,11 @@
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.txtStudentName);
             this.groupControl1.Controls.Add(this.label2);
-            this.groupControl1.Location = new System.Drawing.Point(0, 30);
+            this.groupControl1.Location = new System.Drawing.Point(188, 26);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(430, 557);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Information of Student";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(165, 479);
-            this.txtEmail.Multiline = true;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(190, 21);
-            this.txtEmail.TabIndex = 51;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(98, 479);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 16);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "Email";
             // 
             // cbbObject
             // 
@@ -329,7 +307,7 @@
             this.groupControl2.Controls.Add(this.button2);
             this.groupControl2.Controls.Add(this.groupBox2);
             this.groupControl2.Controls.Add(this.groupBox1);
-            this.groupControl2.Location = new System.Drawing.Point(436, 30);
+            this.groupControl2.Location = new System.Drawing.Point(624, 26);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(402, 557);
             this.groupControl2.TabIndex = 1;
@@ -490,7 +468,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(0, -3);
+            this.button1.Location = new System.Drawing.Point(188, -8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(838, 33);
             this.button1.TabIndex = 2;
@@ -501,7 +479,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(837, 571);
+            this.ClientSize = new System.Drawing.Size(1151, 571);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
@@ -564,7 +542,5 @@
         private System.Windows.Forms.TextBox txtNameFather;
         private System.Windows.Forms.ComboBox cbbObject;
         private System.Windows.Forms.ComboBox cbbGender;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label1;
     }
 }

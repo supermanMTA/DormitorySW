@@ -26,7 +26,10 @@ namespace SoftWare_Engineering.GUIStudent
             Student st = context.Students.Where(p => p.Email == user.Email).FirstOrDefault();
             var contract = context.Contracts.Where(p => p.ID_Student == st.ID).FirstOrDefault();
             contract.DateStart = DateTime.Now;
-            if (cbbTime.Text == "1 năm") contract.DateEnd = DateTime.Now;
+            if (cbbTime.Text == "1 year") contract.DateEnd = DateTime.Now.AddDays(365);
+            if (cbbTime.Text == "1 term") contract.DateEnd = DateTime.Now.AddDays(365);
+            context.SaveChanges();
+            MessageBox.Show("Successful");
 
         }
 
@@ -34,5 +37,15 @@ namespace SoftWare_Engineering.GUIStudent
         {
 
         }
+
+        private void Extension_Load(object sender, EventArgs e)
+        {
+            Student st = context.Students.Where(p => p.Email == user.Email).FirstOrDefault();
+            var contract = context.Contracts.Where(p => p.ID_Student == st.ID).FirstOrDefault();
+            txtID.Text = contract.ID.ToString();
+            txtStudentID.Text= st.ID.ToString();
+            txtRoomID.Text = st.Room_ID.ToString();
+
+         }
     }
 }

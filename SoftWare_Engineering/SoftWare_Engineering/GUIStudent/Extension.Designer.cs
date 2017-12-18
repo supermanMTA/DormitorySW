@@ -31,11 +31,9 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnExtend = new System.Windows.Forms.Button();
             this.cbbTime = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtRoomID = new System.Windows.Forms.TextBox();
+            this.txtStudentID = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,49 +63,41 @@
             // 
             // cbbTime
             // 
+            this.cbbTime.AutoCompleteCustomSource.AddRange(new string[] {
+            "1 year",
+            "1 term"});
             this.cbbTime.FormattingEnabled = true;
-            this.cbbTime.Location = new System.Drawing.Point(473, 318);
+            this.cbbTime.Items.AddRange(new object[] {
+            "1 year",
+            "1 term"});
+            this.cbbTime.Location = new System.Drawing.Point(473, 270);
             this.cbbTime.Name = "cbbTime";
             this.cbbTime.Size = new System.Drawing.Size(178, 21);
             this.cbbTime.TabIndex = 38;
             // 
-            // textBox5
+            // txtRoomID
             // 
-            this.textBox5.Location = new System.Drawing.Point(473, 213);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(178, 20);
-            this.textBox5.TabIndex = 37;
+            this.txtRoomID.Enabled = false;
+            this.txtRoomID.Location = new System.Drawing.Point(473, 213);
+            this.txtRoomID.Name = "txtRoomID";
+            this.txtRoomID.Size = new System.Drawing.Size(178, 20);
+            this.txtRoomID.TabIndex = 37;
             // 
-            // textBox3
+            // txtStudentID
             // 
-            this.textBox3.Location = new System.Drawing.Point(473, 261);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(178, 20);
-            this.textBox3.TabIndex = 36;
+            this.txtStudentID.Enabled = false;
+            this.txtStudentID.Location = new System.Drawing.Point(473, 164);
+            this.txtStudentID.Name = "txtStudentID";
+            this.txtStudentID.Size = new System.Drawing.Size(178, 20);
+            this.txtStudentID.TabIndex = 35;
             // 
-            // textBox2
+            // txtID
             // 
-            this.textBox2.Location = new System.Drawing.Point(473, 164);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(178, 20);
-            this.textBox2.TabIndex = 35;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(473, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 20);
-            this.textBox1.TabIndex = 34;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(382, 265);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 16);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Staff ID";
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(473, 107);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(178, 20);
+            this.txtID.TabIndex = 34;
             // 
             // label5
             // 
@@ -143,7 +133,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(390, 323);
+            this.label2.Location = new System.Drawing.Point(390, 275);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 16);
             this.label2.TabIndex = 29;
@@ -167,11 +157,9 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnExtend);
             this.Controls.Add(this.cbbTime);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtRoomID);
+            this.Controls.Add(this.txtStudentID);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -180,6 +168,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Extension";
             this.Text = "Extension";
+            this.Load += new System.EventHandler(this.Extension_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,11 +179,9 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnExtend;
         private System.Windows.Forms.ComboBox cbbTime;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtRoomID;
+        private System.Windows.Forms.TextBox txtStudentID;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

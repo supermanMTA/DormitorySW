@@ -14,16 +14,27 @@ namespace SoftWare_Engineering.Report
     public partial class StudentReport : Form
     {
         MyContext context = new MyContext();
-        public StudentReport()
+        int id = 0;
+        public StudentReport(int a)
         {
             InitializeComponent();
+            id = a;
         }
 
         private void StudentReport_Load(object sender, EventArgs e)
         {
-            dormMSDataSetBindingSource.DataSource = context.Students.OrderBy(p=>p.Room_ID).ToList();
-            this.reportViewer1.RefreshReport();
-            
+            if (id == 2) {
+
+                dormMSDataSetBindingSource.DataSource = context.Students.ToList();
+                this.reportViewer1.RefreshReport();
+            }
+           
+            if (id == 1)
+            {
+
+                dormMSDataSetBindingSource.DataSource = context.Students.OrderBy(p => p.Room_ID).ToList();
+                this.reportViewer1.RefreshReport();
+            }
         }
     }
 }

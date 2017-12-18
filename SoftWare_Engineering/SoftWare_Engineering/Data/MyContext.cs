@@ -8,7 +8,7 @@ namespace SoftWare_Engineering.Data
     public partial class MyContext : DbContext
     {
         public MyContext()
-            : base("name=MyContext1")
+            : base("name=MyContext")
         {
         }
 
@@ -27,12 +27,15 @@ namespace SoftWare_Engineering.Data
         public virtual DbSet<SchoolYear> SchoolYears { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<Student> Students { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TypeRoom> TypeRooms { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<RegistrationForm>()
+                .Property(e => e.Email)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Relative>()
                 .Property(e => e.Relationship)
                 .IsFixedLength();

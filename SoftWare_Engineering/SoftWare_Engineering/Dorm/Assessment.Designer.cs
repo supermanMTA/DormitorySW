@@ -29,10 +29,14 @@
         {
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.btnAdd = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
+            this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbStaff = new System.Windows.Forms.ComboBox();
+            this.cbbYear = new System.Windows.Forms.ComboBox();
             this.txtPurport = new System.Windows.Forms.RichTextBox();
             this.txtRoomID = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -42,12 +46,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.ToolStripButton();
-            this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.gridAss = new DevExpress.XtraGrid.GridControl();
             this.gridAssessment = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cbbYear = new System.Windows.Forms.ComboBox();
-            this.cbbStaff = new System.Windows.Forms.ComboBox();
             this.groupBox5.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -77,6 +77,18 @@
             this.toolStrip2.Size = new System.Drawing.Size(338, 33);
             this.toolStrip2.TabIndex = 81;
             this.toolStrip2.Text = "toolStrip1";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AutoSize = false;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::SoftWare_Engineering.Properties.Resources.add_1_icon;
+            this.btnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(60, 30);
+            this.btnAdd.Text = "Add";
+            this.btnAdd.ToolTipText = "Thêm(CRT+N)";
+            this.btnAdd.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // btnEdit
             // 
@@ -111,6 +123,16 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Image = global::SoftWare_Engineering.Properties.Resources.Cancel;
+            this.btnCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(63, 30);
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cbbStaff);
@@ -130,6 +152,22 @@
             this.groupBox1.Size = new System.Drawing.Size(616, 206);
             this.groupBox1.TabIndex = 85;
             this.groupBox1.TabStop = false;
+            // 
+            // cbbStaff
+            // 
+            this.cbbStaff.FormattingEnabled = true;
+            this.cbbStaff.Location = new System.Drawing.Point(129, 112);
+            this.cbbStaff.Name = "cbbStaff";
+            this.cbbStaff.Size = new System.Drawing.Size(178, 21);
+            this.cbbStaff.TabIndex = 13;
+            // 
+            // cbbYear
+            // 
+            this.cbbYear.FormattingEnabled = true;
+            this.cbbYear.Location = new System.Drawing.Point(411, 112);
+            this.cbbYear.Name = "cbbYear";
+            this.cbbYear.Size = new System.Drawing.Size(182, 21);
+            this.cbbYear.TabIndex = 12;
             // 
             // txtPurport
             // 
@@ -215,28 +253,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Assessment ID";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.AutoSize = false;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = global::SoftWare_Engineering.Properties.Resources.add_1_icon;
-            this.btnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(60, 30);
-            this.btnAdd.Text = "Add";
-            this.btnAdd.ToolTipText = "Thêm(CRT+N)";
-            this.btnAdd.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Enabled = false;
-            this.btnCancel.Image = global::SoftWare_Engineering.Properties.Resources.Cancel;
-            this.btnCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(63, 30);
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // gridAss
             // 
             this.gridAss.Location = new System.Drawing.Point(-4, 263);
@@ -255,22 +271,6 @@
             this.gridAssessment.OptionsView.ShowGroupPanel = false;
             this.gridAssessment.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridAssessment_FocusedRowChanged);
             // 
-            // cbbYear
-            // 
-            this.cbbYear.FormattingEnabled = true;
-            this.cbbYear.Location = new System.Drawing.Point(411, 112);
-            this.cbbYear.Name = "cbbYear";
-            this.cbbYear.Size = new System.Drawing.Size(182, 21);
-            this.cbbYear.TabIndex = 12;
-            // 
-            // cbbStaff
-            // 
-            this.cbbStaff.FormattingEnabled = true;
-            this.cbbStaff.Location = new System.Drawing.Point(129, 112);
-            this.cbbStaff.Name = "cbbStaff";
-            this.cbbStaff.Size = new System.Drawing.Size(178, 21);
-            this.cbbStaff.TabIndex = 13;
-            // 
             // Assessment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +281,7 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Name = "Assessment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Assessment";
             this.Load += new System.EventHandler(this.Assessment_Load);
             this.groupBox5.ResumeLayout(false);

@@ -9,7 +9,6 @@ namespace SoftWare_Engineering.Data
     [Table("RoomAssessment")]
     public partial class RoomAssessment
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
         public int? ID_Staff { get; set; }

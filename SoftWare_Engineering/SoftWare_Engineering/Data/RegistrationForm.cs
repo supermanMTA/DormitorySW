@@ -57,8 +57,9 @@ namespace SoftWare_Engineering.Data
         public string JobOfMother { get; set; }
 
         public int? ID_Class { get; set; }
+
+        [Required]
         [StringLength(50)]
         public string Email { get; set; }
-
     }
 }

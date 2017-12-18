@@ -29,35 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dorm_MSDataSet = new SoftWare_Engineering.Dorm_MSDataSet();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.dormMSDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dorm_MSDataSet)).BeginInit();
+            this.dorm_MSDataSet = new SoftWare_Engineering.Dorm_MSDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.dormMSDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dorm_MSDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // dormMSDataSetBindingSource
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.dormMSDataSetBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SoftWare_Engineering.Report.Report_Student.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1174, 549);
-            this.reportViewer1.TabIndex = 0;
+            this.dormMSDataSetBindingSource.DataSource = this.dorm_MSDataSet;
+            this.dormMSDataSetBindingSource.Position = 0;
             // 
             // dorm_MSDataSet
             // 
             this.dorm_MSDataSet.DataSetName = "Dorm_MSDataSet";
             this.dorm_MSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dormMSDataSetBindingSource
+            // reportViewer1
             // 
-            this.dormMSDataSetBindingSource.DataSource = this.dorm_MSDataSet;
-            this.dormMSDataSetBindingSource.Position = 0;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.dormMSDataSetBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SoftWare_Engineering.Report.Report_Student.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(1174, 549);
+            this.reportViewer1.TabIndex = 0;
             // 
             // StudentReport
             // 
@@ -68,10 +68,11 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StudentReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentReport";
             this.Load += new System.EventHandler(this.StudentReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dorm_MSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dormMSDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dorm_MSDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

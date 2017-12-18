@@ -30,12 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dorm_MSDataSet3 = new SoftWare_Engineering.Dorm_MSDataSet3();
             this.dormMSDataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dorm_MSDataSet3)).BeginInit();
+            this.dorm_MSDataSet3 = new SoftWare_Engineering.Dorm_MSDataSet3();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.dormMSDataSet3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dorm_MSDataSet3)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dormMSDataSet3BindingSource
+            // 
+            this.dormMSDataSet3BindingSource.DataSource = this.dorm_MSDataSet3;
+            this.dormMSDataSet3BindingSource.Position = 0;
+            // 
+            // dorm_MSDataSet3
+            // 
+            this.dorm_MSDataSet3.DataSetName = "Dorm_MSDataSet3";
+            this.dorm_MSDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -50,16 +60,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(728, 514);
             this.reportViewer1.TabIndex = 2;
             // 
-            // dorm_MSDataSet3
-            // 
-            this.dorm_MSDataSet3.DataSetName = "Dorm_MSDataSet3";
-            this.dorm_MSDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dormMSDataSet3BindingSource
-            // 
-            this.dormMSDataSet3BindingSource.DataSource = this.dorm_MSDataSet3;
-            this.dormMSDataSet3BindingSource.Position = 0;
-            // 
             // Bill_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -67,10 +67,11 @@
             this.ClientSize = new System.Drawing.Size(728, 514);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Bill_Report";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bill_Report";
             this.Load += new System.EventHandler(this.Bill_Report_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dorm_MSDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dormMSDataSet3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dorm_MSDataSet3)).EndInit();
             this.ResumeLayout(false);
 
         }

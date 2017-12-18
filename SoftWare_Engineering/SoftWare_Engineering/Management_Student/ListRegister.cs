@@ -45,7 +45,6 @@ namespace SoftWare_Engineering.Management_Student
             LoadStudent();
         }
         #endregion
-
         #region Sự kiện
         private void gridRegister_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -68,6 +67,7 @@ namespace SoftWare_Engineering.Management_Student
         {
             int id = Convert.ToInt32(gridRegister.GetFocusedRowCellValue("ID"));
             cbbRoom.Enabled = true;
+            button2.Enabled = true;
             if (cbbGender.Text == "Nữ") {
                 var list = context.Rooms.Where(p => p.ID_TypeR == 2&&p.Number<p.MaxNumber);
                 cbbRoom.DataSource = list.ToList();
@@ -106,8 +106,7 @@ namespace SoftWare_Engineering.Management_Student
                 context.SaveChanges();
                 context.RegistrationForms.Remove(RG);
                 context.SaveChanges();
-                MessageBox.Show("Done");
-              
+                MessageBox.Show("Done");              
                 Room r = context.Rooms.Find(st.Room_ID);
                 r.Number++;
                 context.SaveChanges();

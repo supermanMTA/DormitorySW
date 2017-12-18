@@ -65,7 +65,7 @@
             this.gridContract.Location = new System.Drawing.Point(12, 218);
             this.gridContract.MainView = this.gricontract;
             this.gridContract.Name = "gridContract";
-            this.gridContract.Size = new System.Drawing.Size(831, 277);
+            this.gridContract.Size = new System.Drawing.Size(831, 301);
             this.gridContract.TabIndex = 113;
             this.gridContract.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gricontract});
@@ -258,7 +258,7 @@
             this.btnExit});
             this.toolStrip1.Location = new System.Drawing.Point(190, 173);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(414, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(383, 27);
             this.toolStrip1.TabIndex = 114;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -329,7 +329,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(864, 516);
+            this.ClientSize = new System.Drawing.Size(857, 516);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.gridContract);
             this.Controls.Add(this.groupBox1);

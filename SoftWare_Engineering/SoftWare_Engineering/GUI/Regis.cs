@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoftWare_Engineering.Data;
+using System.Text.RegularExpressions;
 
 namespace SoftWare_Engineering.GUI
 {
@@ -31,6 +32,10 @@ namespace SoftWare_Engineering.GUI
             {
                 MessageBox.Show("Password is not secure");
             }
+            else if(Regex.Match(txtEmail.Text, @"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)").Success == false)
+            {
+                MessageBox.Show("Invalid email");
+            }
             else
             {
                 var u = context.Users.Find(txtEmail.Text);
@@ -47,9 +52,9 @@ namespace SoftWare_Engineering.GUI
                     context.SaveChanges();
                     MessageBox.Show("Done!");
                     this.Hide();
-                  //  Main main = new Main();
-                  //  main.Show();
-                 
+                    Main main = new Main();
+                    main.Show();
+
                 }
             }
 
@@ -57,11 +62,9 @@ namespace SoftWare_Engineering.GUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Main main = new Main();
-            
+            Main main = new Main();            
             this.Hide();
-            main.ShowDialog();
-           
+            main.ShowDialog();           
         }
     }
 }

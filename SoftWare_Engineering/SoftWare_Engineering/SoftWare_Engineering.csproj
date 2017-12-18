@@ -118,6 +118,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentDT.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\Asset.cs" />
     <Compile Include="Data\Bill.cs" />
     <Compile Include="Data\Calendar.cs" />
     <Compile Include="Data\Class.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="Data\SchoolYear.cs" />
     <Compile Include="Data\Staff.cs" />
     <Compile Include="Data\Student.cs" />
+    <Compile Include="Data\sysdiagram.cs" />
     <Compile Include="Data\TypeRoom.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Domitori_MSDataSet1.Designer.cs">
@@ -226,12 +228,6 @@
     </Compile>
     <Compile Include="GUI\StudentForm.Designer.cs">
       <DependentUpon>StudentForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Management_Student\Change Room.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Management_Student\Change Room.Designer.cs">
-      <DependentUpon>Change Room.cs</DependentUpon>
     </Compile>
     <Compile Include="Management_Student\Compliment_M.cs">
       <SubType>Form</SubType>
@@ -327,9 +323,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StudentForm.resx">
       <DependentUpon>StudentForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Management_Student\Change Room.resx">
-      <DependentUpon>Change Room.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Management_Student\Compliment_M.resx">
       <DependentUpon>Compliment_M.cs</DependentUpon>

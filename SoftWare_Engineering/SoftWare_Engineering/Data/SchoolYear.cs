@@ -9,10 +9,9 @@ namespace SoftWare_Engineering.Data
     [Table("SchoolYear")]
     public partial class SchoolYear
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
-        [StringLength(50)]
+        [StringLength(10)]
         public string Name { get; set; }
 
         [Column(TypeName = "date")]

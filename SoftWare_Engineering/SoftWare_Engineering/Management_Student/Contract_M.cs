@@ -78,6 +78,7 @@ namespace SoftWare_Engineering.Management_Student
             return contract;
         }
         #endregion
+        #region Sự kiện
         private void gricontract_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (gricontract.FocusedRowHandle >= 0)
@@ -213,5 +214,6 @@ namespace SoftWare_Engineering.Management_Student
         {
             this.Hide();
         }
+        #endregion
     }
 }

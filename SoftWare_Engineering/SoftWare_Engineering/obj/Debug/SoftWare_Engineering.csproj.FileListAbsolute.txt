@@ -449,7 +449,6 @@ D:\Code\DormitorySW\SoftWare_Engineering\SoftWare_Engineering\obj\Debug\SoftWare
 D:\Code\DormitorySW\SoftWare_Engineering\SoftWare_Engineering\obj\Debug\SoftWare_Engineering.GUI.Login.resources
 D:\Code\DormitorySW\SoftWare_Engineering\SoftWare_Engineering\obj\Debug\SoftWare_Engineering.GUI.Start.resources
 D:\Code\DormitorySW\SoftWare_Engineering\SoftWare_Engineering\obj\Debug\SoftWare_Engineering.GUI.StudentForm.resources
-D:\Code\DormitorySW\SoftWare_Engineering\SoftWare_Engineering\obj\Debug\SoftWare_Engineering.Management_Student.Change_Room.resources
 D:\Code\DormitorySW\SoftWare_Engineering\SoftWare_Engineering\obj\Debug\SoftWare_Engineering.Management_Student.Compliment_M.resources
 D:\Code\DormitorySW\SoftWare_Engineering\SoftWare_Engineering\obj\Debug\SoftWare_Engineering.Management_Student.Contract_M.resources
 D:\Code\DormitorySW\SoftWare_Engineering\SoftWare_Engineering\obj\Debug\SoftWare_Engineering.Management_Student.Discipline_M.resources

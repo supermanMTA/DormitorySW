@@ -4,14 +4,15 @@ namespace SoftWare_Engineering.Data
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+
     public partial class MyContext : DbContext
     {
         public MyContext()
-            : base("name=MyContext")
+            : base("name=MyContext1")
         {
-
         }
 
+        public virtual DbSet<Asset> Assets { get; set; }
         public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<Calendar> Calendars { get; set; }
         public virtual DbSet<Class> Classes { get; set; }
@@ -27,6 +28,7 @@ namespace SoftWare_Engineering.Data
         public virtual DbSet<SchoolYear> SchoolYears { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TypeRoom> TypeRooms { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
@@ -44,9 +46,13 @@ namespace SoftWare_Engineering.Data
                 .Property(e => e.Job)
                 .IsFixedLength();
 
+            modelBuilder.Entity<Room>()
+                .Property(e => e.Name)
+                .IsUnicode(false);
+
             modelBuilder.Entity<SchoolYear>()
                 .Property(e => e.Name)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<Student>()
                 .Property(e => e.Email)

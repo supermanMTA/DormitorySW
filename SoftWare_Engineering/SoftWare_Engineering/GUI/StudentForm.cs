@@ -41,7 +41,8 @@ namespace SoftWare_Engineering.GUI
                            room_ID = p.Room_ID,
                            Birthday = p.DateOfBirth,
                            Nation = p.Nation,
-                           Religion = p.Religion
+                           Religion = p.Religion,
+                           Email=p.Email
                        };
             gridStudnet.DataSource = dbST.ToList();
         }
@@ -265,8 +266,6 @@ namespace SoftWare_Engineering.GUI
             }
         }
 
-        
-
         private void btnCompliment_Click(object sender, EventArgs e)
         {
             int id = (int)gridStudent.GetFocusedRowCellValue("ID");
@@ -422,17 +421,19 @@ namespace SoftWare_Engineering.GUI
             contract.ShowDialog();
         }
 
-        #endregion
-
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             StudentReport report = new StudentReport(2);
             report.Show();
         }
+
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             StudentReport report = new StudentReport(1);
             report.Show();
         }
+
+        #endregion
+
     }
 }

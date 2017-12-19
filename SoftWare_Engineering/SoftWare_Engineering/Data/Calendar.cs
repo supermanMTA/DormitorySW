@@ -18,6 +18,6 @@ namespace SoftWare_Engineering.Data
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID_Staff { get; set; }
 
-        public TimeSpan? Time { get; set; }
+        public int? Dormitory { get; set; }
     }
 }

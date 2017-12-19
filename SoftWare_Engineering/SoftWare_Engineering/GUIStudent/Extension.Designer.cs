@@ -167,6 +167,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Extension";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Extension";
             this.Load += new System.EventHandler(this.Extension_Load);
             this.ResumeLayout(false);

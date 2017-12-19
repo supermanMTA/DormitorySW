@@ -175,6 +175,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dorm_MSDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Frm_Calendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Frm_Calendar.Designer.cs">
+      <DependentUpon>Frm_Calendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MyAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dorm\Bill_M.resx">
       <DependentUpon>Bill_M.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Frm_Calendar.resx">
+      <DependentUpon>Frm_Calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MyAccount.resx">
       <DependentUpon>MyAccount.cs</DependentUpon>

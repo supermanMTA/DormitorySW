@@ -153,9 +153,10 @@ namespace SoftWare_Engineering.GUI
             barAdd.Enabled = true;
             barSave.Enabled = false;
             barCancel.Enabled = false;
-            groupControl1.Enabled = false;
             txtEmail.Enabled = true;
             txtPass.Enabled = true;
+            groupControl1.Enabled = false;
+            
         }
         /// <summary>
         /// Sửa nhân viên
@@ -230,6 +231,11 @@ namespace SoftWare_Engineering.GUI
             report.Show();
         }
         #endregion
-       
+
+        private void btnCalendar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Calendar calendar = new Frm_Calendar();
+            calendar.Show();
+        }
     }
 }

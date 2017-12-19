@@ -83,6 +83,15 @@
             this.barRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barCancel = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -104,15 +113,19 @@
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
-            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -620,7 +633,6 @@
             this.barOutput.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barOutput.ImageOptions.Image")));
             this.barOutput.Name = "barOutput";
             this.barOutput.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-          //  this.barOutput.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barOutput_ItemClick);
             // 
             // barSort
             // 
@@ -686,6 +698,69 @@
             this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "Output File";
+            this.barSubItem1.Id = 15;
+            this.barSubItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.Image")));
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7)});
+            this.barSubItem1.Name = "barSubItem1";
+            this.barSubItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Room";
+            this.barButtonItem5.Id = 21;
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "StudentID";
+            this.barButtonItem7.Id = 23;
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Room";
+            this.barButtonItem2.Id = 16;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Dormitory";
+            this.barButtonItem3.Id = 17;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "barSubItem2";
+            this.barSubItem2.Id = 18;
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barSubItem3
+            // 
+            this.barSubItem3.Caption = "Dormitory";
+            this.barSubItem3.Id = 19;
+            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4)});
+            this.barSubItem3.Name = "barSubItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 20;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Dormitory";
+            this.barButtonItem6.Id = 22;
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -732,6 +807,20 @@
             // 
             // gridStudent
             // 
+            this.gridStudent.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12,
+            this.gridColumn13});
             this.gridStudent.GridControl = this.gridStudnet;
             this.gridStudent.Name = "gridStudent";
             this.gridStudent.OptionsFind.AlwaysVisible = true;
@@ -893,69 +982,121 @@
             this.label6.TabIndex = 91;
             this.label6.Text = "Relative list";
             // 
-            // barSubItem1
+            // gridColumn1
             // 
-            this.barSubItem1.Caption = "Output File";
-            this.barSubItem1.Id = 15;
-            this.barSubItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.Image")));
-            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7)});
-            this.barSubItem1.Name = "barSubItem1";
-            this.barSubItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.gridColumn1.Caption = "Student ID";
+            this.gridColumn1.FieldName = "ID";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 50;
             // 
-            // barButtonItem2
+            // gridColumn2
             // 
-            this.barButtonItem2.Caption = "Room";
-            this.barButtonItem2.Id = 16;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.gridColumn2.Caption = "Student Name";
+            this.gridColumn2.FieldName = "Name";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 100;
             // 
-            // barButtonItem3
+            // gridColumn3
             // 
-            this.barButtonItem3.Caption = "Dormitory";
-            this.barButtonItem3.Id = 17;
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.gridColumn3.Caption = "Gender";
+            this.gridColumn3.FieldName = "Gender";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 40;
             // 
-            // barSubItem2
+            // gridColumn4
             // 
-            this.barSubItem2.Caption = "barSubItem2";
-            this.barSubItem2.Id = 18;
-            this.barSubItem2.Name = "barSubItem2";
+            this.gridColumn4.Caption = "Object";
+            this.gridColumn4.FieldName = "Object";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 55;
             // 
-            // barSubItem3
+            // gridColumn5
             // 
-            this.barSubItem3.Caption = "Dormitory";
-            this.barSubItem3.Id = 19;
-            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4)});
-            this.barSubItem3.Name = "barSubItem3";
+            this.gridColumn5.Caption = "Address";
+            this.gridColumn5.FieldName = "Address";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 105;
             // 
-            // barButtonItem4
+            // gridColumn6
             // 
-            this.barButtonItem4.Caption = "barButtonItem4";
-            this.barButtonItem4.Id = 20;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.gridColumn6.Caption = "Telephone number";
+            this.gridColumn6.FieldName = "Telephone";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 63;
             // 
-            // barButtonItem5
+            // gridColumn7
             // 
-            this.barButtonItem5.Caption = "Room";
-            this.barButtonItem5.Id = 21;
-            this.barButtonItem5.Name = "barButtonItem5";
-            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            this.gridColumn7.Caption = "Identity card";
+            this.gridColumn7.FieldName = "Identity_Card";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.Width = 63;
             // 
-            // barButtonItem6
+            // gridColumn8
             // 
-            this.barButtonItem6.Caption = "Dormitory";
-            this.barButtonItem6.Id = 22;
-            this.barButtonItem6.Name = "barButtonItem6";
-         //   this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
+            this.gridColumn8.Caption = "Room ID";
+            this.gridColumn8.FieldName = "room_ID";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.Width = 31;
             // 
-            // barButtonItem7
+            // gridColumn9
             // 
-            this.barButtonItem7.Caption = "StudentID";
-            this.barButtonItem7.Id = 23;
-            this.barButtonItem7.Name = "barButtonItem7";
-            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            this.gridColumn9.Caption = "Date of birth";
+            this.gridColumn9.FieldName = "Birthday";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 8;
+            this.gridColumn9.Width = 52;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Nation";
+            this.gridColumn10.FieldName = "Nation";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 9;
+            this.gridColumn10.Width = 55;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Religion";
+            this.gridColumn11.FieldName = "Religion";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 10;
+            this.gridColumn11.Width = 55;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Email";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 11;
+            this.gridColumn12.Width = 60;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Class";
+            this.gridColumn13.FieldName = "IDClass";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 12;
+            this.gridColumn13.Width = 30;
             // 
             // StudentForm
             // 
@@ -1084,5 +1225,18 @@
         private DevExpress.XtraBars.BarSubItem barSubItem2;
         private DevExpress.XtraBars.BarSubItem barSubItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
     }
 }

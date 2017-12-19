@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Staff));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -74,14 +78,12 @@
             this.barCalendar = new DevExpress.XtraBars.BarButtonItem();
             this.barCancel = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCalendar = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gridStaff = new DevExpress.XtraGrid.GridControl();
             this.griStaff = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -117,6 +119,38 @@
             this.groupControl1.Size = new System.Drawing.Size(306, 568);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Information ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 482);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Pass";
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(81, 479);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(190, 21);
+            this.txtPass.TabIndex = 15;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(81, 423);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(190, 21);
+            this.txtEmail.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 423);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(31, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Email";
             // 
             // txtPhone
             // 
@@ -284,9 +318,10 @@
             this.barButtonItem12,
             this.barCalendar,
             this.barCancel,
-            this.barButtonItem13});
+            this.barButtonItem13,
+            this.btnCalendar});
             this.ribbonControl1.Location = new System.Drawing.Point(306, 0);
-            this.ribbonControl1.MaxItemId = 33;
+            this.ribbonControl1.MaxItemId = 34;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -503,10 +538,20 @@
             this.barButtonItem13.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem13.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem13_ItemClick);
             // 
+            // btnCalendar
+            // 
+            this.btnCalendar.Caption = "Calendar";
+            this.btnCalendar.Id = 33;
+            this.btnCalendar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.ImageOptions.Image")));
+            this.btnCalendar.Name = "btnCalendar";
+            this.btnCalendar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnCalendar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCalendar_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
+            this.ribbonPageGroup3,
+            this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
             // 
@@ -520,6 +565,12 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem13);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "ribbonPageGroup1";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnCalendar);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // gridStaff
             // 
@@ -539,38 +590,6 @@
             this.griStaff.OptionsFind.AlwaysVisible = true;
             this.griStaff.OptionsView.ShowGroupPanel = false;
             this.griStaff.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.griStaff_FocusedRowChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 423);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Email";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(81, 423);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(190, 21);
-            this.txtEmail.TabIndex = 14;
-            // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(81, 479);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(190, 21);
-            this.txtPass.TabIndex = 15;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 482);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(29, 13);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Pass";
             // 
             // Frm_Staff
             // 
@@ -650,5 +669,7 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label8;
+        private DevExpress.XtraBars.BarButtonItem btnCalendar;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
     }
 }

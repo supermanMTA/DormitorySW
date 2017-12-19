@@ -97,9 +97,9 @@
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.txtStudentName);
             this.groupControl1.Controls.Add(this.label2);
-            this.groupControl1.Location = new System.Drawing.Point(188, 26);
+            this.groupControl1.Location = new System.Drawing.Point(188, 31);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(430, 557);
+            this.groupControl1.Size = new System.Drawing.Size(430, 485);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Information of Student";
             // 
@@ -307,9 +307,9 @@
             this.groupControl2.Controls.Add(this.button2);
             this.groupControl2.Controls.Add(this.groupBox2);
             this.groupControl2.Controls.Add(this.groupBox1);
-            this.groupControl2.Location = new System.Drawing.Point(624, 26);
+            this.groupControl2.Location = new System.Drawing.Point(624, 31);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(402, 557);
+            this.groupControl2.Size = new System.Drawing.Size(402, 485);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Information of Relative";
             // 
@@ -468,7 +468,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(188, -8);
+            this.button1.Location = new System.Drawing.Point(188, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(838, 33);
             this.button1.TabIndex = 2;
@@ -479,7 +479,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 571);
+            this.ClientSize = new System.Drawing.Size(1151, 524);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);

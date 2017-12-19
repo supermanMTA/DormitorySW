@@ -20,7 +20,8 @@ namespace SoftWare_Engineering.GUI
         {
             InitializeComponent();
         }
-       private void LoaddgvStaff()
+        #region Load DL
+        private void LoaddgvStaff()
         {
             var list = from p in context.Staffs
                        select new
@@ -31,7 +32,8 @@ namespace SoftWare_Engineering.GUI
                            Religion=p.Religion,
                            DateOfBirth=p.DateOfBirth,
                            Address=p.Address,
-                           PhoneNumber=p.PhoneNumber
+                           PhoneNumber=p.PhoneNumber,
+                           Email=p.Email
                        };
             gridStaff.DataSource = list.ToList();
         }
@@ -40,7 +42,8 @@ namespace SoftWare_Engineering.GUI
         {
             LoaddgvStaff();
         }
-
+        #endregion
+        #region Lấy DL
         private Staff GetStaffByForm(Staff sf)
         {
           //  Staff sf = new Staff();
@@ -50,8 +53,11 @@ namespace SoftWare_Engineering.GUI
             sf.Religion = cbbReligion.Text;
             sf.DateOfBirth = dtStaff.Value;
             sf.Address = txtAddress.Text;
+            sf.Email = txtEmail.Text;
+            sf.Pass = txtPass.Text;
             return sf;
         }
+        #endregion
         #region Sự kiện của nhân viên
         /// <summary>
         /// Chi tiết nhân viên
@@ -70,6 +76,7 @@ namespace SoftWare_Engineering.GUI
                     cbbNation.Text = griStaff.GetFocusedRowCellValue("Nation").ToString();
                     cbbReligion.Text = griStaff.GetFocusedRowCellValue("Religion").ToString();
                     dtStaff.Text = griStaff.GetFocusedRowCellValue("DateOfBirth").ToString();
+                    txtEmail.Text= griStaff.GetFocusedRowCellValue("Email").ToString();
                 }
                 catch (Exception ex)
                 {
@@ -92,6 +99,7 @@ namespace SoftWare_Engineering.GUI
             txtAddress.Clear();
             txtName.Clear();
             txtPhone.Clear();
+            groupControl1.Enabled = true;
             ok = true;
         }
         /// <summary>
@@ -107,8 +115,14 @@ namespace SoftWare_Engineering.GUI
                 try
                 {
                     Staff tg = new Staff();
-                     GetStaffByForm(tg);
+                    GetStaffByForm(tg);
                     context.Staffs.Add(tg);
+                    context.SaveChanges();
+                    User user = new User();
+                    user.Email = tg.Email;
+                    user.Pass = tg.Pass;
+                    user.Object = 1;
+                    context.Users.Add(user);
                     context.SaveChanges();
                     MessageBox.Show("Done!");
                     LoaddgvStaff();
@@ -139,6 +153,9 @@ namespace SoftWare_Engineering.GUI
             barAdd.Enabled = true;
             barSave.Enabled = false;
             barCancel.Enabled = false;
+            groupControl1.Enabled = false;
+            txtEmail.Enabled = true;
+            txtPass.Enabled = true;
         }
         /// <summary>
         /// Sửa nhân viên
@@ -153,7 +170,10 @@ namespace SoftWare_Engineering.GUI
             barDelete.Enabled = false;
             barSave.Enabled = true;
             barCancel.Enabled = true;
+            txtEmail.Enabled = false;
+            txtPass.Enabled = false;
             ok =false;
+            groupControl1.Enabled = true;
         }
         /// <summary>
         /// Xóa nhân viên
@@ -189,11 +209,10 @@ namespace SoftWare_Engineering.GUI
                 }
             }
         }
-        #endregion
 
         private void barCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Staff_Load(sender,e);
+            Frm_Staff_Load(sender, e);
             barEdit.Enabled = true;
             barDelete.Enabled = true;
             barAdd.Enabled = true;
@@ -210,10 +229,7 @@ namespace SoftWare_Engineering.GUI
             Staff_Report report = new Staff_Report();
             report.Show();
         }
-
-        private void barCalendar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
+        #endregion
+       
     }
 }

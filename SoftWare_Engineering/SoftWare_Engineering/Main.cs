@@ -17,6 +17,7 @@ namespace SoftWare_Engineering
     {
         User user = new User();
         MyContext context = new MyContext();
+        #region constructor, Load Dl
         public Main()
         {
             InitializeComponent();
@@ -36,10 +37,11 @@ namespace SoftWare_Engineering
                 if (user.Object == 1)
                 {
                     btnDormM.Enabled = true;
-                    btnStaffM.Enabled = true;
-                    btnStudentM.Enabled = true;                    
+                 //   btnStaffM.Enabled = true;
+                    btnStudentM.Enabled = true;
+                    btnACC.Enabled = true;
                 }
-                if(user.Object==2)
+               else  if (user.Object==2)
                 {                   
                     var student = context.Students.Where(p => p.Email == user.Email).FirstOrDefault();
                     if (student != null)
@@ -58,6 +60,13 @@ namespace SoftWare_Engineering
                     else { btnInfor.Enabled = false; btnRegistration.Enabled = true;barExtension.Enabled = false; }
                     
                 }
+               else  if (user.Object == 0)
+                {
+                    btnDormM.Enabled = true;
+                    btnStaffM.Enabled = true;
+                    btnStudentM.Enabled = true;
+                    btnACC.Enabled = true;
+                }
             }
             else { return; }
            
@@ -72,6 +81,8 @@ namespace SoftWare_Engineering
             nv.Show();
             LoadUser();
         }
+        #endregion
+
         #region Manager
         private void btnStudentM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -161,5 +172,11 @@ namespace SoftWare_Engineering
             main.Show();
         }
         #endregion
+
+        private void btnACC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            MyAccount acc = new MyAccount(user);
+            acc.Show();
+        }
     }
 }

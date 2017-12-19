@@ -52,6 +52,7 @@
             this.btnStaffM = new DevExpress.XtraBars.BarButtonItem();
             this.btnDormM = new DevExpress.XtraBars.BarButtonItem();
             this.btnAccountM = new DevExpress.XtraBars.BarButtonItem();
+            this.btnACC = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -60,6 +61,7 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -198,9 +200,10 @@
             this.btnAccountM,
             this.btnLogin,
             this.btnRegis,
-            this.btnLogout});
+            this.btnLogout,
+            this.btnACC});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 18;
+            this.ribbonControl1.MaxItemId = 19;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -276,6 +279,16 @@
             this.btnAccountM.Id = 14;
             this.btnAccountM.Name = "btnAccountM";
             // 
+            // btnACC
+            // 
+            this.btnACC.Caption = "My Account";
+            this.btnACC.Enabled = false;
+            this.btnACC.Id = 18;
+            this.btnACC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnACC.ImageOptions.Image")));
+            this.btnACC.Name = "btnACC";
+            this.btnACC.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnACC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnACC_ItemClick);
+            // 
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -306,7 +319,8 @@
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup5,
             this.ribbonPageGroup6,
-            this.ribbonPageGroup7});
+            this.ribbonPageGroup7,
+            this.ribbonPageGroup8});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Manager";
             // 
@@ -324,6 +338,11 @@
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btnDormM);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnACC);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             // 
             // ribbonPage4
             // 
@@ -390,6 +409,8 @@
         private DevExpress.XtraBars.BarButtonItem btnRegis;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup bar;
         private DevExpress.XtraBars.BarButtonItem btnLogout;
+        private DevExpress.XtraBars.BarButtonItem btnACC;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
     }
 }
 

@@ -76,9 +76,12 @@
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gridStaff = new DevExpress.XtraGrid.GridControl();
             this.griStaff = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -89,6 +92,10 @@
             // groupControl1
             // 
             this.groupControl1.AllowDrop = true;
+            this.groupControl1.Controls.Add(this.label9);
+            this.groupControl1.Controls.Add(this.txtPass);
+            this.groupControl1.Controls.Add(this.txtEmail);
+            this.groupControl1.Controls.Add(this.label8);
             this.groupControl1.Controls.Add(this.txtPhone);
             this.groupControl1.Controls.Add(this.txtAddress);
             this.groupControl1.Controls.Add(this.label7);
@@ -104,6 +111,7 @@
             this.groupControl1.Controls.Add(this.txtID);
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupControl1.Enabled = false;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(306, 568);
@@ -139,7 +147,7 @@
             // 
             this.dtStaff.Location = new System.Drawing.Point(81, 284);
             this.dtStaff.Name = "dtStaff";
-            this.dtStaff.Size = new System.Drawing.Size(200, 21);
+            this.dtStaff.Size = new System.Drawing.Size(190, 21);
             this.dtStaff.TabIndex = 6;
             // 
             // label6
@@ -230,7 +238,7 @@
             this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(81, 48);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(181, 21);
+            this.txtID.Size = new System.Drawing.Size(190, 21);
             this.txtID.TabIndex = 1;
             // 
             // label1
@@ -475,7 +483,6 @@
             this.barCalendar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barCalendar.ImageOptions.Image")));
             this.barCalendar.Name = "barCalendar";
             this.barCalendar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barCalendar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barCalendar_ItemClick);
             // 
             // barCancel
             // 
@@ -499,8 +506,7 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3,
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
             // 
@@ -514,12 +520,6 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem13);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "ribbonPageGroup1";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barCalendar);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // gridStaff
             // 
@@ -539,6 +539,38 @@
             this.griStaff.OptionsFind.AlwaysVisible = true;
             this.griStaff.OptionsView.ShowGroupPanel = false;
             this.griStaff.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.griStaff_FocusedRowChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 423);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(31, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(81, 423);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(190, 21);
+            this.txtEmail.TabIndex = 14;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(81, 479);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(190, 21);
+            this.txtPass.TabIndex = 15;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 482);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Pass";
             // 
             // Frm_Staff
             // 
@@ -611,9 +643,12 @@
         private DevExpress.XtraGrid.GridControl gridStaff;
         private DevExpress.XtraGrid.Views.Grid.GridView griStaff;
         private DevExpress.XtraBars.BarButtonItem barCalendar;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barCancel;
         private System.Windows.Forms.TextBox txtPhone;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -69,13 +69,13 @@ namespace SoftWare_Engineering.Management_Student
             cbbRoom.Enabled = true;
             button2.Enabled = true;
             if (cbbGender.Text == "Nữ") {
-                var list = context.Rooms.Where(p => p.ID_TypeR == 2&&p.Number<p.MaxNumber);
+                var list = context.Rooms.Where(p => p.ID_TypeR == 2&&p.Number<p.MaxNumber&&p.Status==true);
                 cbbRoom.DataSource = list.ToList();
                 cbbRoom.ValueMember = "ID";
                 cbbRoom.DisplayMember = "ID";
             }
             else {
-                var list = context.Rooms.Where(p => p.ID_TypeR == 1 && p.Number < p.MaxNumber);
+                var list = context.Rooms.Where(p => p.ID_TypeR == 1 && p.Number < p.MaxNumber&&p.Status==true);
                 cbbRoom.DataSource = list.ToList();
                 cbbRoom.ValueMember = "ID";
                 cbbRoom.DisplayMember = "ID";

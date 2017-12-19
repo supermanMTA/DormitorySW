@@ -30,7 +30,8 @@ namespace SoftWare_Engineering.GUI
                            NumberStudent = p.Number,
                            MaxNumber = p.MaxNumber,
                            DormitoryName = context.Dormitories.Where(z => z.ID == p.ID_Dormitori).FirstOrDefault().Name,
-                           TypeRoom = context.TypeRooms.Where(z => z.ID == p.ID_TypeR).FirstOrDefault().Name
+                           TypeRoom = context.TypeRooms.Where(z => z.ID == p.ID_TypeR).FirstOrDefault().Name,
+                           Status=p.Status==true?"Sử dụng":"Không sử dụng"
                        };
             gridDorm.DataSource = list.ToList();
         }
@@ -82,6 +83,7 @@ namespace SoftWare_Engineering.GUI
             r.ID_TypeR = (int)cbbTypeRoom.SelectedValue;
             r.MaxNumber =Convert.ToInt32( txtMaxNumber.Text);
             r.Number = Convert.ToInt32( txtNumber.Text);
+            r.Status = true;
             return r;
         }
         
@@ -194,14 +196,15 @@ namespace SoftWare_Engineering.GUI
                     {
                         // int id = (int)griDorm.GetFocusedRowCellValue("ID");
                         Room tg = context.Rooms.Find(id);
-                        context.Rooms.Remove(tg);
+                        tg.Status = false;
+                      //  context.Rooms.Remove(tg);
                         context.SaveChanges();
                         MessageBox.Show("Deleted");
                         LoaddgvDorm();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Failed\n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Failed\n" + ex.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             
@@ -242,13 +245,7 @@ namespace SoftWare_Engineering.GUI
                     int id = (int)griDorm.GetFocusedRowCellValue("ID");
                     Room tg = context.Rooms.Where(p => p.ID == id).FirstOrDefault();
                     GetRoomByForm(tg);
-                    var room = context.Rooms.Where(p => p.Name == tg.Name).FirstOrDefault();
-                    if (room != null)
-                    {
-                        MessageBox.Show("This room already exists");
-                    }
-                    else
-                    {
+
                         context.SaveChanges();
                         MessageBox.Show("Done!");
                         LoaddgvDorm();
@@ -257,7 +254,7 @@ namespace SoftWare_Engineering.GUI
                         barAdd.Enabled = true;
                         barSave.Enabled = false;
                         barCancel.Enabled = false;
-                    }
+                    
                 }
                 catch (Exception ex)
                 {

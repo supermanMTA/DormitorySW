@@ -22,5 +22,7 @@ namespace SoftWare_Engineering.Data
         public int? MaxNumber { get; set; }
 
         public int? ID_TypeR { get; set; }
+
+        public bool? Status { get; set; }
     }
 }

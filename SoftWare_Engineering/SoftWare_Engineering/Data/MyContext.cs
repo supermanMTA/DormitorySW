@@ -54,6 +54,14 @@ namespace SoftWare_Engineering.Data
                 .Property(e => e.Name)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Staff>()
+                .Property(e => e.Pass)
+                .IsFixedLength();
+
+            modelBuilder.Entity<Staff>()
+                .Property(e => e.Email)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Student>()
                 .Property(e => e.Email)
                 .IsUnicode(false);

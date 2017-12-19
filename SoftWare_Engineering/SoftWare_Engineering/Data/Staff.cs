@@ -28,5 +28,11 @@ namespace SoftWare_Engineering.Data
 
         [StringLength(50)]
         public string Address { get; set; }
+
+        [StringLength(10)]
+        public string Pass { get; set; }
+
+        [StringLength(50)]
+        public string Email { get; set; }
     }
 }

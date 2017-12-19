@@ -175,6 +175,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dorm_MSDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GUI\MyAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MyAccount.Designer.cs">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Regis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dorm\Bill_M.resx">
       <DependentUpon>Bill_M.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MyAccount.resx">
+      <DependentUpon>MyAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Regis.resx">
       <DependentUpon>Regis.cs</DependentUpon>
@@ -501,9 +510,7 @@
   <ItemGroup>
     <None Include="Resources\user-info-icon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Management_Staff\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\add-1-icon.png" />
   </ItemGroup>

@@ -23,10 +23,18 @@ namespace SoftWare_Engineering.Management_Student
         private void LoadControl()
         {
 
-            
-            cbbStaff.DataSource = context.Staffs.ToList();
-            cbbStaff.ValueMember = "ID";
-            cbbStaff.DisplayMember = "Name";
+
+            cbbStaff.Properties.DataSource = context.Staffs.ToList()
+                .Select(p => new
+                {
+                    ID=p.ID,
+                    Name=p.Name
+                }).ToList();
+                
+                
+                    
+            cbbStaff.Properties.ValueMember = "ID";
+            cbbStaff.Properties.DisplayMember = "Name";
 
             cbbStudent.DataSource = context.Students.ToList();
             cbbStudent.ValueMember = "ID";
@@ -65,7 +73,7 @@ namespace SoftWare_Engineering.Management_Student
         {
             contract.ID_Student = Convert.ToInt32( cbbStudent.SelectedValue);
             contract.ID_Room = (int)context.Students.Find(contract.ID_Student).Room_ID;
-            contract.ID_Staff = Convert.ToInt32(cbbStaff.SelectedValue);
+            contract.ID_Staff = Convert.ToInt32(cbbStaff.EditValue);
             contract.DateEnd = dateEnd.Value;
             contract.DateFound = dateFound.Value;
             contract.DateStart = dateStart.Value;

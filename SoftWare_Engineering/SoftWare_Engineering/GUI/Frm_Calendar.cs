@@ -16,7 +16,9 @@ namespace SoftWare_Engineering.GUI
         MyContext context = new MyContext();
         public Frm_Calendar()
         {
+            
             InitializeComponent();
+            
         }
 
         public void LoadDL()
@@ -36,9 +38,17 @@ namespace SoftWare_Engineering.GUI
             cbbDormitory.ValueMember = "ID";
             cbbDormitory.DisplayMember = "Name";
 
-            cbbStaff.DataSource = context.Staffs.ToList();
-            cbbStaff.ValueMember = "ID";
-            cbbStaff.DisplayMember = "Name";
+            
+            
+            var list = context.Staffs.ToList()
+               .Select(p => new
+               {                  
+                   ID = p.ID,
+                   Name = p.Name
+               }).ToList();
+            gridLookUpStaff.Properties.DataSource = list;
+            gridLookUpStaff.Properties.ValueMember = "ID";
+            gridLookUpStaff.Properties.DisplayMember = "Name";
         }
 
         private void Calendar_Load(object sender, EventArgs e)
@@ -52,7 +62,7 @@ namespace SoftWare_Engineering.GUI
             Calendar calendar = new Calendar();
             calendar.Day = date.Value;
             calendar.Dormitory =(int) cbbDormitory.SelectedValue;
-            calendar.ID_Staff =(int) cbbStaff.SelectedValue;
+            calendar.ID_Staff = (int)gridLookUpStaff.EditValue;
             context.Calendars.Add(calendar);
             context.SaveChanges();
             Calendar_Load(sender, e);

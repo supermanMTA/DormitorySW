@@ -1011,6 +1011,13 @@
                   <FontWeight>Normal</FontWeight>
                 </Style>
               </TextRun>
+              <TextRun>
+                <Value>  VND</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
@@ -1019,7 +1026,7 @@
         <Top>4.79042in</Top>
         <Left>3.29389in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>1.86458in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>

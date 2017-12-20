@@ -38,7 +38,7 @@ namespace SoftWare_Engineering.Report
                   new ReportParameter("Date",bill.DateFounded.Value.ToString()),
                   new ReportParameter("Room",bill.ID_Room.ToString()),                  
                   new ReportParameter("Sum",sum.ToString()),
-                  new ReportParameter("Year",bill.BillOfYear.ToString()),
+                  new ReportParameter("Year",context.SchoolYears.Where(p=>p.ID== bill.BillOfYear).FirstOrDefault().Name),
                   new ReportParameter("Month",bill.BillOfMonth.ToString())
                 };
                 this.reportViewer1.LocalReport.SetParameters(listPara);

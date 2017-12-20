@@ -35,7 +35,8 @@
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbbStaff = new System.Windows.Forms.ComboBox();
+            this.cbbStaff = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cbbYear = new System.Windows.Forms.ComboBox();
             this.txtPurport = new System.Windows.Forms.RichTextBox();
             this.txtRoomID = new System.Windows.Forms.TextBox();
@@ -51,6 +52,8 @@
             this.groupBox5.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbStaff.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAss)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAssessment)).BeginInit();
             this.SuspendLayout();
@@ -155,11 +158,20 @@
             // 
             // cbbStaff
             // 
-            this.cbbStaff.FormattingEnabled = true;
-            this.cbbStaff.Location = new System.Drawing.Point(129, 112);
+            this.cbbStaff.Location = new System.Drawing.Point(132, 112);
             this.cbbStaff.Name = "cbbStaff";
-            this.cbbStaff.Size = new System.Drawing.Size(178, 21);
-            this.cbbStaff.TabIndex = 13;
+            this.cbbStaff.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbStaff.Properties.View = this.gridLookUpEdit1View;
+            this.cbbStaff.Size = new System.Drawing.Size(175, 20);
+            this.cbbStaff.TabIndex = 3;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // cbbYear
             // 
@@ -167,14 +179,14 @@
             this.cbbYear.Location = new System.Drawing.Point(411, 112);
             this.cbbYear.Name = "cbbYear";
             this.cbbYear.Size = new System.Drawing.Size(182, 21);
-            this.cbbYear.TabIndex = 12;
+            this.cbbYear.TabIndex = 4;
             // 
             // txtPurport
             // 
             this.txtPurport.Location = new System.Drawing.Point(129, 139);
             this.txtPurport.Name = "txtPurport";
             this.txtPurport.Size = new System.Drawing.Size(378, 63);
-            this.txtPurport.TabIndex = 11;
+            this.txtPurport.TabIndex = 5;
             this.txtPurport.Text = "";
             // 
             // txtRoomID
@@ -183,7 +195,7 @@
             this.txtRoomID.Location = new System.Drawing.Point(410, 65);
             this.txtRoomID.Name = "txtRoomID";
             this.txtRoomID.Size = new System.Drawing.Size(183, 20);
-            this.txtRoomID.TabIndex = 8;
+            this.txtRoomID.TabIndex = 2;
             // 
             // txtID
             // 
@@ -191,7 +203,7 @@
             this.txtID.Location = new System.Drawing.Point(129, 65);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(178, 20);
-            this.txtID.TabIndex = 7;
+            this.txtID.TabIndex = 1;
             // 
             // label6
             // 
@@ -199,9 +211,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(53, 113);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 16);
+            this.label6.Size = new System.Drawing.Size(37, 16);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Staff ID";
+            this.label6.Text = "Staff ";
             // 
             // label5
             // 
@@ -280,6 +292,8 @@
             this.Controls.Add(this.gridAss);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Assessment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Assessment";
@@ -290,6 +304,8 @@
             this.toolStrip2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbStaff.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAss)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAssessment)).EndInit();
             this.ResumeLayout(false);
@@ -317,6 +333,7 @@
         private DevExpress.XtraGrid.GridControl gridAss;
         private DevExpress.XtraGrid.Views.Grid.GridView gridAssessment;
         private System.Windows.Forms.ComboBox cbbYear;
-        private System.Windows.Forms.ComboBox cbbStaff;
+        private DevExpress.XtraEditors.GridLookUpEdit cbbStaff;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
     }
 }

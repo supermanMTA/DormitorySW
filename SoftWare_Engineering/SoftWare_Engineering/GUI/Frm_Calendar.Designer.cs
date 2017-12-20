@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.cbbStaff = new System.Windows.Forms.ComboBox();
+            this.gridLookUpStaff = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cbbDormitory = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -41,6 +42,8 @@
             this.griCalendar = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpStaff.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCalendar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.griCalendar)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +51,7 @@
             // groupControl1
             // 
             this.groupControl1.AllowDrop = true;
-            this.groupControl1.Controls.Add(this.cbbStaff);
+            this.groupControl1.Controls.Add(this.gridLookUpStaff);
             this.groupControl1.Controls.Add(this.cbbDormitory);
             this.groupControl1.Controls.Add(this.button2);
             this.groupControl1.Controls.Add(this.btnAdd);
@@ -63,13 +66,23 @@
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "Information ";
             // 
-            // cbbStaff
+            // gridLookUpStaff
             // 
-            this.cbbStaff.FormattingEnabled = true;
-            this.cbbStaff.Location = new System.Drawing.Point(81, 136);
-            this.cbbStaff.Name = "cbbStaff";
-            this.cbbStaff.Size = new System.Drawing.Size(178, 21);
-            this.cbbStaff.TabIndex = 12;
+            this.gridLookUpStaff.EditValue = "";
+            this.gridLookUpStaff.Location = new System.Drawing.Point(81, 133);
+            this.gridLookUpStaff.Name = "gridLookUpStaff";
+            this.gridLookUpStaff.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpStaff.Properties.View = this.gridLookUpEdit1View;
+            this.gridLookUpStaff.Size = new System.Drawing.Size(178, 20);
+            this.gridLookUpStaff.TabIndex = 3;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // cbbDormitory
             // 
@@ -77,14 +90,14 @@
             this.cbbDormitory.Location = new System.Drawing.Point(81, 42);
             this.cbbDormitory.Name = "cbbDormitory";
             this.cbbDormitory.Size = new System.Drawing.Size(178, 21);
-            this.cbbDormitory.TabIndex = 11;
+            this.cbbDormitory.TabIndex = 1;
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(188, 202);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(58, 23);
-            this.button2.TabIndex = 10;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Output";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -94,7 +107,7 @@
             this.btnAdd.Location = new System.Drawing.Point(36, 202);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(59, 23);
-            this.btnAdd.TabIndex = 9;
+            this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -104,7 +117,7 @@
             this.date.Location = new System.Drawing.Point(81, 89);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(178, 21);
-            this.date.TabIndex = 8;
+            this.date.TabIndex = 2;
             // 
             // label4
             // 
@@ -165,6 +178,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpStaff.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCalendar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.griCalendar)).EndInit();
             this.ResumeLayout(false);
@@ -182,7 +197,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView griCalendar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ComboBox cbbStaff;
         private System.Windows.Forms.ComboBox cbbDormitory;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpStaff;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
     }
 }

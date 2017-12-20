@@ -248,6 +248,8 @@
             this.ClientSize = new System.Drawing.Size(724, 492);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gridRe);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ListRegister";
             this.Text = "ListRegister";
             this.Load += new System.EventHandler(this.ListRegister_Load);

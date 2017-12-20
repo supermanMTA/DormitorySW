@@ -98,6 +98,19 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gridStudnet = new DevExpress.XtraGrid.GridControl();
             this.gridStudent = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -113,19 +126,6 @@
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -432,6 +432,7 @@
             // 
             this.cbbReligion.FormattingEnabled = true;
             this.cbbReligion.Items.AddRange(new object[] {
+            "Không",
             "Thiên chúa giáo",
             "Tin lành",
             "Hindu",
@@ -537,6 +538,7 @@
             // 
             this.navBarGroup4.Caption = "Contract";
             this.navBarGroup4.ControlContainer = this.navBarGroupControlContainer4;
+            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.GroupClientHeight = 36;
             this.navBarGroup4.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.navBarGroup4.Name = "navBarGroup4";
@@ -828,6 +830,122 @@
             this.gridStudent.OptionsView.ShowGroupPanel = false;
             this.gridStudent.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridStudent_FocusedRowChanged);
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Student ID";
+            this.gridColumn1.FieldName = "ID";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 62;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Student Name";
+            this.gridColumn2.FieldName = "Name";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 143;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Gender";
+            this.gridColumn3.FieldName = "Gender";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 47;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Object";
+            this.gridColumn4.FieldName = "Object";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 77;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Address";
+            this.gridColumn5.FieldName = "Address";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 150;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Telephone number";
+            this.gridColumn6.FieldName = "Telephone";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 100;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Identity card";
+            this.gridColumn7.FieldName = "Identity_Card";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.Width = 85;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Room ID";
+            this.gridColumn8.FieldName = "room_ID";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.Width = 52;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Date of birth";
+            this.gridColumn9.FieldName = "Birthday";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 8;
+            this.gridColumn9.Width = 101;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Nation";
+            this.gridColumn10.FieldName = "Nation";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 9;
+            this.gridColumn10.Width = 62;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Religion";
+            this.gridColumn11.FieldName = "Religion";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 10;
+            this.gridColumn11.Width = 62;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Email";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 11;
+            this.gridColumn12.Width = 76;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Class";
+            this.gridColumn13.FieldName = "IDClass";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 12;
+            this.gridColumn13.Width = 61;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label3);
@@ -981,122 +1099,6 @@
             this.label6.Size = new System.Drawing.Size(90, 16);
             this.label6.TabIndex = 91;
             this.label6.Text = "Relative list";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Student ID";
-            this.gridColumn1.FieldName = "ID";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 50;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Student Name";
-            this.gridColumn2.FieldName = "Name";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 100;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Gender";
-            this.gridColumn3.FieldName = "Gender";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 40;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Object";
-            this.gridColumn4.FieldName = "Object";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 55;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Address";
-            this.gridColumn5.FieldName = "Address";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 105;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Telephone number";
-            this.gridColumn6.FieldName = "Telephone";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 63;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "Identity card";
-            this.gridColumn7.FieldName = "Identity_Card";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
-            this.gridColumn7.Width = 63;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Room ID";
-            this.gridColumn8.FieldName = "room_ID";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
-            this.gridColumn8.Width = 31;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "Date of birth";
-            this.gridColumn9.FieldName = "Birthday";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 8;
-            this.gridColumn9.Width = 52;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "Nation";
-            this.gridColumn10.FieldName = "Nation";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 9;
-            this.gridColumn10.Width = 55;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "Religion";
-            this.gridColumn11.FieldName = "Religion";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 10;
-            this.gridColumn11.Width = 55;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "Email";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 11;
-            this.gridColumn12.Width = 60;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "Class";
-            this.gridColumn13.FieldName = "IDClass";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 12;
-            this.gridColumn13.Width = 30;
             // 
             // StudentForm
             // 

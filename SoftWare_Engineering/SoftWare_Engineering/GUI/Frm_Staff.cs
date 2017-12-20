@@ -126,6 +126,13 @@ namespace SoftWare_Engineering.GUI
                     context.SaveChanges();
                     MessageBox.Show("Done!");
                     LoaddgvStaff();
+                    barEdit.Enabled = true;
+                    barDelete.Enabled = true;
+                    barAdd.Enabled = true;
+                    barSave.Enabled = false;
+                    barCancel.Enabled = false;
+                   
+                    groupControl1.Enabled = false;
                 }
                 catch (Exception ex)
                 {
@@ -142,20 +149,21 @@ namespace SoftWare_Engineering.GUI
                     context.SaveChanges();
                     MessageBox.Show("Done!");
                     LoaddgvStaff();
+                    barEdit.Enabled = true;
+                    barDelete.Enabled = true;
+                    barAdd.Enabled = true;
+                    barSave.Enabled = false;
+                    barCancel.Enabled = false;
+                    txtEmail.Enabled = true;
+                    txtPass.Enabled = true;
+                    groupControl1.Enabled = false;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Failed\n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            barEdit.Enabled = true;
-            barDelete.Enabled = true;
-            barAdd.Enabled = true;
-            barSave.Enabled = false;
-            barCancel.Enabled = false;
-            txtEmail.Enabled = true;
-            txtPass.Enabled = true;
-            groupControl1.Enabled = false;
+
             
         }
         /// <summary>

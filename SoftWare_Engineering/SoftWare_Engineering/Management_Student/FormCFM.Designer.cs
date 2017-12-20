@@ -84,7 +84,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(748, 316);
+            this.tabControl1.Size = new System.Drawing.Size(748, 427);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -95,7 +95,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(740, 285);
+            this.tabPage1.Size = new System.Drawing.Size(740, 396);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Faculty";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             this.gridF.Location = new System.Drawing.Point(344, 62);
             this.gridF.MainView = this.gridFaculty;
             this.gridF.Name = "gridF";
-            this.gridF.Size = new System.Drawing.Size(393, 200);
+            this.gridF.Size = new System.Drawing.Size(393, 328);
             this.gridF.TabIndex = 92;
             this.gridF.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridFaculty});
@@ -439,8 +439,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 337);
+            this.ClientSize = new System.Drawing.Size(803, 440);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCFM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCFM";

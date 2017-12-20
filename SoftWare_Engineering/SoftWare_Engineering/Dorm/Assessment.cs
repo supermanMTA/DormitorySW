@@ -40,9 +40,15 @@ namespace SoftWare_Engineering.Dorm
             cbbYear.DataSource = context.SchoolYears.ToList();
             cbbYear.ValueMember = "ID";
             cbbYear.DisplayMember = "Name";
-            cbbStaff.DataSource = context.Staffs.ToList();
-            cbbStaff.ValueMember = "ID";
-            cbbStaff.DisplayMember = "Name";
+
+            cbbStaff.Properties.DataSource = context.Staffs.ToList()
+                .Select(p => new
+                {
+                    ID = p.ID,
+                    Name = p.Name
+                }).ToList();
+            cbbStaff.Properties.ValueMember = "ID";
+            cbbStaff.Properties.DisplayMember = "Name";
         }
         private void Assessment_Load(object sender, EventArgs e)
         {
@@ -54,7 +60,7 @@ namespace SoftWare_Engineering.Dorm
         #region Lấy Dl
         public void GetByForm(RoomAssessment am)
         {
-            am.ID_Staff =(int) cbbStaff.SelectedValue;
+            am.ID_Staff =(int) cbbStaff.EditValue;
             am.ID_Year = (int)cbbYear.SelectedValue;
             am.Purport = txtPurport.Text;
             am.ID_Room = id;
@@ -67,7 +73,7 @@ namespace SoftWare_Engineering.Dorm
             {
                 txtID.Text = gridAssessment.GetFocusedRowCellValue("IDOfAssessment").ToString();
                 txtRoomID.Text = gridAssessment.GetFocusedRowCellValue("IDOfRoom").ToString();
-                cbbStaff.SelectedIndex = (int)gridAssessment.GetFocusedRowCellValue("IDOfStaff");
+                cbbStaff.EditValue = (int)gridAssessment.GetFocusedRowCellValue("IDOfStaff");
                 cbbYear.SelectedIndex = (int)gridAssessment.GetFocusedRowCellValue("IDOfYear");
                 txtPurport.Text = gridAssessment.GetFocusedRowCellValue("Purport").ToString();
             }

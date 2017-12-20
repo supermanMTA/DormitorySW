@@ -74,6 +74,7 @@ namespace SoftWare_Engineering.GUI
             LoaddgvDorm();
         }
         #endregion
+
         #region Lấy và ktr dữ liệu từ form
         private Room GetRoomByForm(Room r)
         {
@@ -131,6 +132,7 @@ namespace SoftWare_Engineering.GUI
         }
 
         #endregion
+
         #region Sự kiện của room
         private void griDorm_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {

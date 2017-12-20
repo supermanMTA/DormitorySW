@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dorm));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtRoomName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,6 +47,12 @@
             this.navBarGroupControlContainer4 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.button1 = new System.Windows.Forms.Button();
             this.navBarGroupControlContainer3 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
+            this.btnEditAssets = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -98,12 +104,6 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gridDorm = new DevExpress.XtraGrid.GridControl();
             this.griDorm = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.btnEditAssets = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl2)).BeginInit();
@@ -146,7 +146,7 @@
             this.txtRoomName.Location = new System.Drawing.Point(96, 61);
             this.txtRoomName.Name = "txtRoomName";
             this.txtRoomName.Size = new System.Drawing.Size(190, 21);
-            this.txtRoomName.TabIndex = 25;
+            this.txtRoomName.TabIndex = 2;
             // 
             // label5
             // 
@@ -163,7 +163,7 @@
             this.cbbTypeRoom.Location = new System.Drawing.Point(97, 128);
             this.cbbTypeRoom.Name = "cbbTypeRoom";
             this.cbbTypeRoom.Size = new System.Drawing.Size(190, 21);
-            this.cbbTypeRoom.TabIndex = 3;
+            this.cbbTypeRoom.TabIndex = 4;
             // 
             // label4
             // 
@@ -180,7 +180,7 @@
             this.cbbDorm.Location = new System.Drawing.Point(96, 92);
             this.cbbDorm.Name = "cbbDorm";
             this.cbbDorm.Size = new System.Drawing.Size(190, 21);
-            this.cbbDorm.TabIndex = 2;
+            this.cbbDorm.TabIndex = 3;
             // 
             // txtMaxNumber
             // 
@@ -188,7 +188,7 @@
             this.txtMaxNumber.Multiline = true;
             this.txtMaxNumber.Name = "txtMaxNumber";
             this.txtMaxNumber.Size = new System.Drawing.Size(190, 26);
-            this.txtMaxNumber.TabIndex = 5;
+            this.txtMaxNumber.TabIndex = 6;
             // 
             // label7
             // 
@@ -223,6 +223,7 @@
             // 
             this.navBarGroup1.Caption = "Student List of Room";
             this.navBarGroup1.ControlContainer = this.navBarGroupControlContainer1;
+            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.GroupClientHeight = 133;
             this.navBarGroup1.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.navBarGroup1.Name = "navBarGroup1";
@@ -303,6 +304,61 @@
             this.navBarGroupControlContainer3.Name = "navBarGroupControlContainer3";
             this.navBarGroupControlContainer3.Size = new System.Drawing.Size(288, 179);
             this.navBarGroupControlContainer3.TabIndex = 4;
+            // 
+            // btnEditAssets
+            // 
+            this.btnEditAssets.Location = new System.Drawing.Point(72, 151);
+            this.btnEditAssets.Name = "btnEditAssets";
+            this.btnEditAssets.Size = new System.Drawing.Size(75, 23);
+            this.btnEditAssets.TabIndex = 13;
+            this.btnEditAssets.Text = "Edit";
+            this.btnEditAssets.UseVisualStyleBackColor = true;
+            this.btnEditAssets.Click += new System.EventHandler(this.btnEditAssets_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(139, 48);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(32, 13);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "piece";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(139, 129);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 13);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "piece";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(139, 86);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 13);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "piece";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(139, 11);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(32, 13);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "piece";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(24, 11);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(25, 13);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Fan";
             // 
             // label10
             // 
@@ -387,7 +443,6 @@
             // 
             this.btnAssets.Caption = "Assets";
             this.btnAssets.ControlContainer = this.navBarGroupControlContainer3;
-            this.btnAssets.Expanded = true;
             this.btnAssets.GroupClientHeight = 183;
             this.btnAssets.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.btnAssets.Name = "btnAssets";
@@ -398,7 +453,7 @@
             this.txtNumber.Multiline = true;
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(190, 24);
-            this.txtNumber.TabIndex = 4;
+            this.txtNumber.TabIndex = 5;
             // 
             // label3
             // 
@@ -715,9 +770,9 @@
             // gridDorm
             // 
             this.gridDorm.Dock = System.Windows.Forms.DockStyle.Top;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridDorm.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridDorm.Location = new System.Drawing.Point(302, 77);
             this.gridDorm.MainView = this.griDorm;
             this.gridDorm.Name = "gridDorm";
@@ -733,61 +788,6 @@
             this.griDorm.OptionsFind.AlwaysVisible = true;
             this.griDorm.OptionsView.ShowGroupPanel = false;
             this.griDorm.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.griDorm_FocusedRowChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(24, 11);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(25, 13);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Fan";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(139, 11);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(32, 13);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "piece";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(139, 86);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(32, 13);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "piece";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(139, 129);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 13);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "piece";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(139, 48);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(32, 13);
-            this.label15.TabIndex = 12;
-            this.label15.Text = "piece";
-            // 
-            // btnEditAssets
-            // 
-            this.btnEditAssets.Location = new System.Drawing.Point(72, 151);
-            this.btnEditAssets.Name = "btnEditAssets";
-            this.btnEditAssets.Size = new System.Drawing.Size(75, 23);
-            this.btnEditAssets.TabIndex = 13;
-            this.btnEditAssets.Text = "Edit";
-            this.btnEditAssets.UseVisualStyleBackColor = true;
-            this.btnEditAssets.Click += new System.EventHandler(this.btnEditAssets_Click);
             // 
             // Frm_Dorm
             // 

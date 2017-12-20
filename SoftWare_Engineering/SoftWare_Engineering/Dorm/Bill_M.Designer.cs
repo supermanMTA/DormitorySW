@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbStudent = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cbbStaff = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtRoom = new System.Windows.Forms.TextBox();
             this.txtSurcharge = new System.Windows.Forms.TextBox();
             this.cbbYear = new System.Windows.Forms.ComboBox();
@@ -37,10 +41,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbbDate = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
-            this.cbbStudent = new System.Windows.Forms.ComboBox();
             this.cbbMonth = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.cbbStaff = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtRent = new System.Windows.Forms.TextBox();
             this.txtWater = new System.Windows.Forms.TextBox();
@@ -62,6 +64,10 @@
             this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbStudent.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbStaff.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -69,6 +75,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbbStudent);
+            this.groupBox1.Controls.Add(this.cbbStaff);
             this.groupBox1.Controls.Add(this.txtRoom);
             this.groupBox1.Controls.Add(this.txtSurcharge);
             this.groupBox1.Controls.Add(this.cbbYear);
@@ -77,10 +85,8 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.cbbDate);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.cbbStudent);
             this.groupBox1.Controls.Add(this.cbbMonth);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.cbbStaff);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtRent);
             this.groupBox1.Controls.Add(this.txtWater);
@@ -98,20 +104,54 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
+            // cbbStudent
+            // 
+            this.cbbStudent.Location = new System.Drawing.Point(452, 165);
+            this.cbbStudent.Name = "cbbStudent";
+            this.cbbStudent.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbStudent.Properties.View = this.gridLookUpEdit2View;
+            this.cbbStudent.Size = new System.Drawing.Size(177, 20);
+            this.cbbStudent.TabIndex = 9;
+            // 
+            // gridLookUpEdit2View
+            // 
+            this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
+            this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
+            // cbbStaff
+            // 
+            this.cbbStaff.Location = new System.Drawing.Point(130, 211);
+            this.cbbStaff.Name = "cbbStaff";
+            this.cbbStaff.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbStaff.Properties.View = this.gridLookUpEdit1View;
+            this.cbbStaff.Size = new System.Drawing.Size(177, 20);
+            this.cbbStaff.TabIndex = 10;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
             // txtRoom
             // 
             this.txtRoom.Enabled = false;
             this.txtRoom.Location = new System.Drawing.Point(129, 89);
             this.txtRoom.Name = "txtRoom";
             this.txtRoom.Size = new System.Drawing.Size(178, 20);
-            this.txtRoom.TabIndex = 27;
+            this.txtRoom.TabIndex = 4;
             // 
             // txtSurcharge
             // 
             this.txtSurcharge.Location = new System.Drawing.Point(130, 166);
             this.txtSurcharge.Name = "txtSurcharge";
             this.txtSurcharge.Size = new System.Drawing.Size(177, 20);
-            this.txtSurcharge.TabIndex = 26;
+            this.txtSurcharge.TabIndex = 8;
             // 
             // cbbYear
             // 
@@ -119,7 +159,7 @@
             this.cbbYear.Location = new System.Drawing.Point(550, 40);
             this.cbbYear.Name = "cbbYear";
             this.cbbYear.Size = new System.Drawing.Size(79, 21);
-            this.cbbYear.TabIndex = 25;
+            this.cbbYear.TabIndex = 3;
             // 
             // label12
             // 
@@ -156,7 +196,7 @@
             this.cbbDate.Location = new System.Drawing.Point(451, 208);
             this.cbbDate.Name = "cbbDate";
             this.cbbDate.Size = new System.Drawing.Size(178, 20);
-            this.cbbDate.TabIndex = 15;
+            this.cbbDate.TabIndex = 11;
             // 
             // label10
             // 
@@ -167,14 +207,6 @@
             this.label10.Size = new System.Drawing.Size(108, 16);
             this.label10.TabIndex = 21;
             this.label10.Text = "Student payment";
-            // 
-            // cbbStudent
-            // 
-            this.cbbStudent.FormattingEnabled = true;
-            this.cbbStudent.Location = new System.Drawing.Point(451, 167);
-            this.cbbStudent.Name = "cbbStudent";
-            this.cbbStudent.Size = new System.Drawing.Size(177, 21);
-            this.cbbStudent.TabIndex = 20;
             // 
             // cbbMonth
             // 
@@ -195,7 +227,7 @@
             this.cbbMonth.Location = new System.Drawing.Point(450, 40);
             this.cbbMonth.Name = "cbbMonth";
             this.cbbMonth.Size = new System.Drawing.Size(39, 21);
-            this.cbbMonth.TabIndex = 19;
+            this.cbbMonth.TabIndex = 2;
             // 
             // label9
             // 
@@ -206,14 +238,6 @@
             this.label9.Size = new System.Drawing.Size(44, 16);
             this.label9.TabIndex = 18;
             this.label9.Text = "Month";
-            // 
-            // cbbStaff
-            // 
-            this.cbbStaff.FormattingEnabled = true;
-            this.cbbStaff.Location = new System.Drawing.Point(129, 208);
-            this.cbbStaff.Name = "cbbStaff";
-            this.cbbStaff.Size = new System.Drawing.Size(178, 21);
-            this.cbbStaff.TabIndex = 17;
             // 
             // label8
             // 
@@ -230,21 +254,21 @@
             this.txtRent.Location = new System.Drawing.Point(450, 84);
             this.txtRent.Name = "txtRent";
             this.txtRent.Size = new System.Drawing.Size(178, 20);
-            this.txtRent.TabIndex = 10;
+            this.txtRent.TabIndex = 5;
             // 
             // txtWater
             // 
             this.txtWater.Location = new System.Drawing.Point(451, 126);
             this.txtWater.Name = "txtWater";
             this.txtWater.Size = new System.Drawing.Size(178, 20);
-            this.txtWater.TabIndex = 9;
+            this.txtWater.TabIndex = 7;
             // 
             // txtElectric
             // 
             this.txtElectric.Location = new System.Drawing.Point(130, 130);
             this.txtElectric.Name = "txtElectric";
             this.txtElectric.Size = new System.Drawing.Size(178, 20);
-            this.txtElectric.TabIndex = 8;
+            this.txtElectric.TabIndex = 6;
             // 
             // txtID
             // 
@@ -252,7 +276,7 @@
             this.txtID.Location = new System.Drawing.Point(129, 46);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(178, 20);
-            this.txtID.TabIndex = 7;
+            this.txtID.TabIndex = 1;
             // 
             // label6
             // 
@@ -422,6 +446,10 @@
             this.Load += new System.EventHandler(this.Bill_M_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbStudent.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbStaff.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             this.toolStrip1.ResumeLayout(false);
@@ -438,10 +466,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker cbbDate;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cbbStudent;
         private System.Windows.Forms.ComboBox cbbMonth;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbbStaff;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtRent;
         private System.Windows.Forms.TextBox txtWater;
@@ -466,5 +492,9 @@
         private System.Windows.Forms.TextBox txtSurcharge;
         private System.Windows.Forms.TextBox txtRoom;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private DevExpress.XtraEditors.GridLookUpEdit cbbStudent;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit2View;
+        private DevExpress.XtraEditors.GridLookUpEdit cbbStaff;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
     }
 }

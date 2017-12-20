@@ -17,7 +17,6 @@ namespace SoftWare_Engineering.GUI
     {
         MyContext context = new MyContext();
         bool ok = true;
-
         #region Load DL
         public StudentForm()
         {
@@ -410,9 +409,16 @@ namespace SoftWare_Engineering.GUI
 
         private void btnContract_Click(object sender, EventArgs e)
         {
+
             int id = (int)gridStudent.GetFocusedRowCellValue("ID");
-            Contract_Report contract = new Contract_Report(id);
-            contract.ShowDialog();
+            var test = context.Contracts.Where(p => p.ID_Student == id).FirstOrDefault();
+            if (test == null) MessageBox.Show("This Student don't have contract");
+            else
+            {
+                Contract_Report contract = new Contract_Report(id);
+                contract.ShowDialog();
+            }
+           
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

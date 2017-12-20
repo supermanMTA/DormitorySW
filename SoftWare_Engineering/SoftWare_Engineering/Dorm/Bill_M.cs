@@ -31,26 +31,39 @@ namespace SoftWare_Engineering.Dorm
                                IDOfBill = p.ID,
                                BillOfMonth = p.BillOfMonth,
                                Year = context.SchoolYears.Where(z => z.ID == p.BillOfYear).FirstOrDefault().Name,
-                               WaterCharge=p.WaterCharge,
-                               ElectricCharge=p.ElectricCharge,
-                               Rent=p.Rent,
-                               Surcharge=p.Surcharge,
-                               StudentName= context.Students.Where(z=>z.ID== p.ID_Student).FirstOrDefault().Name,
+                               WaterCharge = p.WaterCharge,
+                               ElectricCharge = p.ElectricCharge,
+                               Rent = p.Rent,
+                               Surcharge = p.Surcharge,
+                               StudentID = p.ID_Student,// context.Students.Where(z=>z.ID== p.ID_Student).FirstOrDefault().Name,
                                RoomID=p.ID_Room,
-                               StaffName=context.Staffs.Where(z=>z.ID== p.ID_Staff).FirstOrDefault().Name,
+                               StaffID=p.ID,//context.Staffs.Where(z=>z.ID== p.ID_Staff).FirstOrDefault().Name,
                                DateFound=p.DateFounded
                            };
             gridBill.DataSource = ListBill.ToList();
         }
         private void LoadControl()
         {
-            cbbStaff.DataSource = context.Staffs.ToList();
-            cbbStaff.ValueMember = "ID";
-            cbbStaff.DisplayMember = "Name";
 
-            cbbStudent.DataSource = context.Students.Where(p => p.Room_ID == id).ToList();
-            cbbStudent.ValueMember = "ID";
-            cbbStudent.DisplayMember = "Name";
+            cbbStaff.Properties.DataSource = context.Staffs.ToList()
+                .Select(p => new
+                {
+                    ID = p.ID,
+                    Name = p.Name
+                }).ToList();
+
+            cbbStaff.Properties.ValueMember = "ID";
+            cbbStaff.Properties.DisplayMember = "Name";
+
+            cbbStudent.Properties.DataSource = context.Students.Where(p => p.Room_ID == id)
+                .Select(p => new
+                {
+                    ID=p.ID,
+                    Name=p.Name
+                }).ToList();
+                
+            cbbStudent.Properties.ValueMember = "ID";
+            cbbStudent.Properties.DisplayMember = "Name";
 
             cbbYear.DataSource = context.SchoolYears.ToList();
             cbbYear.ValueMember = "ID";
@@ -81,8 +94,8 @@ namespace SoftWare_Engineering.Dorm
             bill.Rent = Convert.ToInt32(txtRent.Text);
             bill.Surcharge = Convert.ToInt32(txtSurcharge.Text);
             bill.WaterCharge = Convert.ToInt32(txtWater.Text);
-            bill.ID_Student = (int)cbbStudent.SelectedValue;
-            bill.ID_Staff = (int)cbbStaff.SelectedValue;
+            bill.ID_Student = (int)cbbStudent.EditValue;
+            bill.ID_Staff = (int)cbbStaff.EditValue;
             bill.ID_Room = Convert.ToInt32(txtRoom.Text);
             
         }
@@ -98,8 +111,8 @@ namespace SoftWare_Engineering.Dorm
                 txtWater.Text= dgvBill.GetFocusedRowCellValue("WaterCharge").ToString();
                 cbbMonth.Text= dgvBill.GetFocusedRowCellValue("BillOfMonth").ToString();
                 cbbYear.Text=dgvBill.GetFocusedRowCellValue("Year").ToString();
-                cbbStaff.Text= dgvBill.GetFocusedRowCellValue("StaffName").ToString();
-                cbbStudent.Text= dgvBill.GetFocusedRowCellValue("StudentName").ToString();
+                cbbStaff.EditValue= dgvBill.GetFocusedRowCellValue("StaffID").ToString();
+                cbbStudent.EditValue= dgvBill.GetFocusedRowCellValue("StudentID").ToString();
                 txtRoom.Text = dgvBill.GetFocusedRowCellValue("RoomID").ToString();
                 cbbDate.Text= dgvBill.GetFocusedRowCellValue("DateFound").ToString();
                 txtID.Text= dgvBill.GetFocusedRowCellValue("IDOfBill").ToString();
@@ -183,7 +196,7 @@ namespace SoftWare_Engineering.Dorm
                     {
                         Bill bill = new Bill();                       
                         GetByForm(bill);
-                        var t = context.Bills.Where(p => p.BillOfMonth == bill.BillOfMonth && p.BillOfYear == bill.BillOfYear).FirstOrDefault();
+                        var t = context.Bills.Where(p => p.BillOfMonth == bill.BillOfMonth & p.BillOfYear == bill.BillOfYear).FirstOrDefault();
                         if (t!=null)
                         {
                             MessageBox.Show("This month has been invoiced");

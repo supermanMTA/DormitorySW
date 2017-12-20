@@ -134,14 +134,14 @@
             this.txtPass.Location = new System.Drawing.Point(81, 479);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(190, 21);
-            this.txtPass.TabIndex = 15;
+            this.txtPass.TabIndex = 9;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(81, 423);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(190, 21);
-            this.txtEmail.TabIndex = 14;
+            this.txtEmail.TabIndex = 8;
             // 
             // label8
             // 

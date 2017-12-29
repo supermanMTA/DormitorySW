@@ -99,6 +99,7 @@ namespace SoftWare_Engineering.GUI
             txtAddress.Clear();
             txtName.Clear();
             txtPhone.Clear();
+            txtEmail.Clear();
             groupControl1.Enabled = true;
             ok = true;
         }
@@ -227,6 +228,7 @@ namespace SoftWare_Engineering.GUI
             barAdd.Enabled = true;
             barSave.Enabled = false;
             barCancel.Enabled = false;
+            groupControl1.Enabled = false;
         }
         /// <summary>
         /// Danh sách nhân viên

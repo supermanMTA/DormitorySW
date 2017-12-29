@@ -62,8 +62,6 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +103,7 @@
             // 
             // btnRegis
             // 
-            this.btnRegis.Caption = "Registration";
+            this.btnRegis.Caption = "Sign up";
             this.btnRegis.Id = 16;
             this.btnRegis.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.Login_Registration_icon;
             this.btnRegis.Name = "btnRegis";
@@ -208,8 +206,7 @@
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2,
-            this.ribbonPage3,
-            this.ribbonPage4});
+            this.ribbonPage3});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.ribbonControl1.Size = new System.Drawing.Size(1296, 143);
             // 
@@ -265,7 +262,7 @@
             // 
             // btnDormM
             // 
-            this.btnDormM.Caption = "Dormitory";
+            this.btnDormM.Caption = "Room";
             this.btnDormM.Enabled = false;
             this.btnDormM.Id = 13;
             this.btnDormM.ImageOptions.Image = global::SoftWare_Engineering.Properties.Resources.House_icon;
@@ -344,18 +341,6 @@
             this.ribbonPageGroup8.ItemLinks.Add(this.btnACC);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             // 
-            // ribbonPage4
-            // 
-            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup9});
-            this.ribbonPage4.Name = "ribbonPage4";
-            this.ribbonPage4.Text = "Help";
-            // 
-            // ribbonPageGroup9
-            // 
-            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "ribbonPageGroup9";
-            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -403,8 +388,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem btnLogin;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.BarButtonItem btnRegis;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup bar;

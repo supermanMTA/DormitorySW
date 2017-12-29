@@ -13,11 +13,11 @@ namespace SoftWare_Engineering.Data
         [Column(Order = 0, TypeName = "date")]
         public DateTime Day { get; set; }
 
+        public int ID_Staff { get; set; }
+
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ID_Staff { get; set; }
-
-        public int? Dormitory { get; set; }
+        public int Dormitory { get; set; }
     }
 }

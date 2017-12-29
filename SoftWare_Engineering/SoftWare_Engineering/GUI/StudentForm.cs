@@ -128,7 +128,7 @@ namespace SoftWare_Engineering.GUI
         }
         #endregion
 
-        #region Sự kiện
+        #region Sự kiện của nhân viên
         private void gridStudent_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (gridStudent.FocusedRowHandle >= 0)
@@ -252,7 +252,11 @@ namespace SoftWare_Engineering.GUI
                     {
                         int id = (int)gridStudent.GetFocusedRowCellValue("ID");
                         Student st = context.Students.Find(id);
+                        int id_room =(int) st.Room_ID;
                         context.Students.Remove(st);
+                        context.SaveChanges();
+
+                        context.Rooms.Find(id_room).Number--;
                         context.SaveChanges();
                         MessageBox.Show("Deleted");
                         LoadDgvStudent();
@@ -324,9 +328,10 @@ namespace SoftWare_Engineering.GUI
 
                     try
                     {
+                        
                         int id = (int)gridStudent.GetFocusedRowCellValue("ID");
-                        string name = gridStudent.GetFocusedRowCellValue("RelativeName").ToString();
-                        Relative tg = context.Relatives.Find(id,name);
+                        var name = txtNameRelative.Text;
+                        Relative tg = context.Relatives.Where(p => p.ID_Student == id & p.Name == name).FirstOrDefault();
                         context.Relatives.Remove(tg);
                         context.SaveChanges();
                         MessageBox.Show("Deleted");
@@ -365,8 +370,8 @@ namespace SoftWare_Engineering.GUI
                 try
                 {
                     int id = (int)gridStudent.GetFocusedRowCellValue("ID");
-                    string name= gridStudent.GetFocusedRowCellValue("RelativeName").ToString();
-                    Relative tg = context.Relatives.Find(name,id);
+                    var name = txtNameRelative.Text;
+                    Relative tg = context.Relatives.Where(p => p.ID_Student == id & p.Name == name).FirstOrDefault();
                     getRelativeByForm(tg);
                     context.SaveChanges();
                     MessageBox.Show("Done!");
@@ -395,13 +400,6 @@ namespace SoftWare_Engineering.GUI
             btnCancel.Enabled = false;
         }
 
-        private void dgvRelative_SelectionChanged(object sender, EventArgs e)
-        {
-            txtJob.Text= dgvRelative.CurrentRow.Cells["JobOfRelative"].Value.ToString();
-            txtNameRelative.Text= dgvRelative.CurrentRow.Cells["RelativeName"].Value.ToString();
-            txtRelationship.Text= dgvRelative.CurrentRow.Cells["Relationship"].Value.ToString();
-        }
-
         private void barRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Student_Load(sender, e);
@@ -418,8 +416,18 @@ namespace SoftWare_Engineering.GUI
                 Contract_Report contract = new Contract_Report(id);
                 contract.ShowDialog();
             }
-           
+
         }
+
+        #endregion
+
+        #region Sự kiện của thân nhân
+        private void dgvRelative_SelectionChanged(object sender, EventArgs e)
+        {
+            txtJob.Text= dgvRelative.CurrentRow.Cells["JobOfRelative"].Value.ToString();
+            txtNameRelative.Text= dgvRelative.CurrentRow.Cells["RelativeName"].Value.ToString();
+            txtRelationship.Text= dgvRelative.CurrentRow.Cells["Relationship"].Value.ToString();
+        }   
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -429,17 +437,17 @@ namespace SoftWare_Engineering.GUI
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            StudentReport report = new StudentReport(2);
+            StudentReport report = new StudentReport(1);
             report.Show();
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            StudentReport report = new StudentReport(1);
+            StudentReport report = new StudentReport(2);
             report.Show();
         }
-
         #endregion
+
 
     }
 }

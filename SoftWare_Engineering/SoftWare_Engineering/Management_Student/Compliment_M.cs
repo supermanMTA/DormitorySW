@@ -15,7 +15,7 @@ namespace SoftWare_Engineering.Management_Student
         Compliment compliment = new Compliment();
         MyContext context = new MyContext();
         bool ok = true;
-        int ID = 0;
+       // int ID = 0;
         public Compliment_M(int a)
         {
             InitializeComponent();
@@ -38,6 +38,7 @@ namespace SoftWare_Engineering.Management_Student
         }
         private void Compliment_M_Load(object sender, EventArgs e)
         {
+            txtStudentID.Text = compliment.ID_Student.ToString();
             LoaddgvCompliment();
         }  
         private Compliment GetComplimentByForm(Compliment cp)

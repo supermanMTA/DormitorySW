@@ -129,7 +129,7 @@
             // cbbClass
             // 
             this.cbbClass.FormattingEnabled = true;
-            this.cbbClass.Location = new System.Drawing.Point(165, 437);
+            this.cbbClass.Location = new System.Drawing.Point(165, 383);
             this.cbbClass.Name = "cbbClass";
             this.cbbClass.Size = new System.Drawing.Size(190, 21);
             this.cbbClass.TabIndex = 47;
@@ -202,7 +202,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(107, 437);
+            this.label7.Location = new System.Drawing.Point(103, 388);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 16);
             this.label7.TabIndex = 38;
@@ -210,7 +210,7 @@
             // 
             // dateBirth
             // 
-            this.dateBirth.Location = new System.Drawing.Point(165, 383);
+            this.dateBirth.Location = new System.Drawing.Point(165, 427);
             this.dateBirth.Name = "dateBirth";
             this.dateBirth.Size = new System.Drawing.Size(190, 21);
             this.dateBirth.TabIndex = 37;
@@ -219,7 +219,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(61, 388);
+            this.label6.Location = new System.Drawing.Point(57, 431);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 16);
             this.label6.TabIndex = 36;
@@ -229,6 +229,7 @@
             // 
             this.cbbReligion.FormattingEnabled = true;
             this.cbbReligion.Items.AddRange(new object[] {
+            "Không",
             "Thiên chúa giáo",
             "Tin lành",
             "đạo phật",

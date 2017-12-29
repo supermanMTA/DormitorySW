@@ -26,12 +26,12 @@ namespace SoftWare_Engineering.GUI
                        select new
                        {
                            ID = p.ID,
-                           Name=p.Name,
+                           Name = p.Name,
                            NumberStudent = p.Number,
                            MaxNumber = p.MaxNumber,
                            DormitoryName = context.Dormitories.Where(z => z.ID == p.ID_Dormitori).FirstOrDefault().Name,
                            TypeRoom = context.TypeRooms.Where(z => z.ID == p.ID_TypeR).FirstOrDefault().Name,
-                           Status=p.Status==true?"Sử dụng":"Không sử dụng"
+                           Status = p.Status == true ? "Sử dụng" : "Không sử dụng"
                        };
             gridDorm.DataSource = list.ToList();
         }
@@ -78,20 +78,21 @@ namespace SoftWare_Engineering.GUI
         #region Lấy và ktr dữ liệu từ form
         private Room GetRoomByForm(Room r)
         {
-          
+
             r.Name = txtRoomName.Text;
-            r.ID_Dormitori =(int) cbbDorm.SelectedValue;
+            r.ID_Dormitori = (int)cbbDorm.SelectedValue;
             r.ID_TypeR = (int)cbbTypeRoom.SelectedValue;
-            r.MaxNumber =Convert.ToInt32( txtMaxNumber.Text);
-            r.Number = Convert.ToInt32( txtNumber.Text);
-            r.Status = true;
+            r.MaxNumber = Convert.ToInt32(txtMaxNumber.Text);
+            r.Number = Convert.ToInt32(txtNumber.Text);
+            if (checkbox1.Checked == true) r.Status = true;
+            else r.Status = false;
             return r;
         }
-        
+
         public bool check()
         {
             int test = 0;
-            if(Int32.TryParse(txtMaxNumber.Text,out test) == false)
+            if (Int32.TryParse(txtMaxNumber.Text, out test) == false)
             {
                 MessageBox.Show("Incorrect format");
                 return false;
@@ -141,15 +142,18 @@ namespace SoftWare_Engineering.GUI
                 try
                 {
                     txtID.Text = griDorm.GetFocusedRowCellValue("ID").ToString();
-                    txtRoomName.Text= griDorm.GetFocusedRowCellValue("Name").ToString();
+                    txtRoomName.Text = griDorm.GetFocusedRowCellValue("Name").ToString();
                     txtMaxNumber.Text = griDorm.GetFocusedRowCellValue("MaxNumber").ToString();
                     txtNumber.Text = griDorm.GetFocusedRowCellValue("NumberStudent").ToString();
                     cbbDorm.Text = griDorm.GetFocusedRowCellValue("DormitoryName").ToString();
                     cbbTypeRoom.Text = griDorm.GetFocusedRowCellValue("TypeRoom").ToString();
+                    if (griDorm.GetFocusedRowCellValue("Status").ToString() == "Sử dụng")
+                        checkbox1.Checked = true;
+                    else checkbox1.Checked = false;
                     LoadStudentOfRoom();
                     LoadAssets(Convert.ToInt32(griDorm.GetFocusedRowCellValue("ID").ToString()));
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -199,7 +203,7 @@ namespace SoftWare_Engineering.GUI
                         // int id = (int)griDorm.GetFocusedRowCellValue("ID");
                         Room tg = context.Rooms.Find(id);
                         tg.Status = false;
-                      //  context.Rooms.Remove(tg);
+                        //  context.Rooms.Remove(tg);
                         context.SaveChanges();
                         MessageBox.Show("Deleted");
                         LoaddgvDorm();
@@ -209,7 +213,7 @@ namespace SoftWare_Engineering.GUI
                         MessageBox.Show("Failed\n" + ex.Message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            
+
             }
         }
 
@@ -221,33 +225,9 @@ namespace SoftWare_Engineering.GUI
                 {
                     try
                     {
-                            Room tg = new Room();
-                             GetRoomByForm(tg);                        
-                            context.Rooms.Add(tg);
-                            context.SaveChanges();
-                            MessageBox.Show("Done!");
-                            LoaddgvDorm();
-                            barEdit.Enabled = true;
-                            barDelete.Enabled = true;
-                            barAdd.Enabled = true;
-                            barSave.Enabled = false;
-                            barCancel.Enabled = false;                            
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Failed\n" + ex.Message, "Communique", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                
-            }
-            else
-            {
-                try
-                {
-                    int id = (int)griDorm.GetFocusedRowCellValue("ID");
-                    Room tg = context.Rooms.Where(p => p.ID == id).FirstOrDefault();
-                    GetRoomByForm(tg);
-
+                        Room tg = new Room();
+                        GetRoomByForm(tg);
+                        context.Rooms.Add(tg);
                         context.SaveChanges();
                         MessageBox.Show("Done!");
                         LoaddgvDorm();
@@ -256,19 +236,66 @@ namespace SoftWare_Engineering.GUI
                         barAdd.Enabled = true;
                         barSave.Enabled = false;
                         barCancel.Enabled = false;
-                    
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Failed\n" + ex.Message, "Communique", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    int id = (int)griDorm.GetFocusedRowCellValue("ID");
+                    Room tg = context.Rooms.Where(p => p.ID == id).FirstOrDefault();
+                    GetRoomByForm(tg);
+                    if (tg.Status == false)
+                    {
+                        var listST = context.Students.Where(p => p.Room_ID == id).FirstOrDefault();
+                        if (listST != null)
+                        {
+                            MessageBox.Show("This room does not empty", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            context.SaveChanges();
+                            MessageBox.Show("Done!");
+                            LoaddgvDorm();
+                            barEdit.Enabled = true;
+                            barDelete.Enabled = true;
+                            barAdd.Enabled = true;
+                            barSave.Enabled = false;
+                            barCancel.Enabled = false;
+                        }
+                    }
+                    else
+                    {
+                        context.SaveChanges();
+                        MessageBox.Show("Done!");
+                        LoaddgvDorm();
+                        barEdit.Enabled = true;
+                        barDelete.Enabled = true;
+                        barAdd.Enabled = true;
+                        barSave.Enabled = false;
+                        barCancel.Enabled = false;
+
+                    }
+                   
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Failed\n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
+
         }
 
         private void barCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Dorm_Load(sender,e);
+            Frm_Dorm_Load(sender, e);
             barEdit.Enabled = true;
             barDelete.Enabled = true;
             barAdd.Enabled = true;
@@ -277,7 +304,7 @@ namespace SoftWare_Engineering.GUI
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32( griDorm.GetFocusedRowCellValue("ID").ToString());
+            int id = Convert.ToInt32(griDorm.GetFocusedRowCellValue("ID").ToString());
             Bill_M bill = new Bill_M(id);
             bill.ShowDialog();
         }
@@ -303,7 +330,7 @@ namespace SoftWare_Engineering.GUI
                     context.SaveChanges();
                     MessageBox.Show("Done");
                 }
-                
+
             }
             else
             {
@@ -319,13 +346,13 @@ namespace SoftWare_Engineering.GUI
                     context.SaveChanges();
                     MessageBox.Show("Done");
                 }
-                
+
             }
-           
+
 
         }
-        #endregion
 
+        #endregion
 
     }
 }

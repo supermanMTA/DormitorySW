@@ -47,6 +47,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridRe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegister)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -72,6 +73,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cbbRoom);
@@ -98,9 +100,9 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(407, 184);
+            this.button2.Location = new System.Drawing.Point(394, 190);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 39);
+            this.button2.Size = new System.Drawing.Size(80, 28);
             this.button2.TabIndex = 60;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
@@ -241,6 +243,17 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "Student Name";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Location = new System.Drawing.Point(508, 190);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 28);
+            this.btnCancel.TabIndex = 61;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // ListRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,5 +295,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbbRoom;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

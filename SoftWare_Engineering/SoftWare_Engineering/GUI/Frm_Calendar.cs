@@ -27,7 +27,9 @@ namespace SoftWare_Engineering.GUI
                                       select new
                                       {
                                           Day = p.Day,
+                                          DormitoryID=p.Dormitory,
                                           Dormitory = context.Dormitories.Where(z => z.ID == p.Dormitory).FirstOrDefault().Name,
+                                          StaffID=p.ID_Staff,
                                           Staff = context.Staffs.Where(z => z.ID == p.ID_Staff).FirstOrDefault().Name
                                            
                                       };
@@ -63,9 +65,20 @@ namespace SoftWare_Engineering.GUI
             calendar.Day = date.Value;
             calendar.Dormitory =(int) cbbDormitory.SelectedValue;
             calendar.ID_Staff = (int)gridLookUpStaff.EditValue;
-            context.Calendars.Add(calendar);
-            context.SaveChanges();
-            Calendar_Load(sender, e);
+            var test = context.Calendars.Where(p => p.Day == calendar.Day && p.ID_Staff == calendar.ID_Staff).FirstOrDefault();
+            var test2 = context.Calendars.Where(p => p.Day == calendar.Day && p.Dormitory == calendar.Dormitory).FirstOrDefault();
+            if ( test!= null)
+            {
+                MessageBox.Show("Existed");
+            }
+            else if (test2 != null) { MessageBox.Show("Existed "); }
+            else
+            {
+                context.Calendars.Add(calendar);
+                context.SaveChanges();
+                Calendar_Load(sender, e);
+            }
+           
         }       
         private void button2_Click(object sender, EventArgs e)
         {
@@ -83,6 +96,36 @@ namespace SoftWare_Engineering.GUI
             {
                 MessageBox.Show("");
             }
+        }
+
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var calendar = context.Calendars.Where(p => p.Day == date.Value && p.Dormitory == (int)cbbDormitory.SelectedValue).FirstOrDefault();
+                calendar.ID_Staff = Convert.ToInt32(gridLookUpStaff.EditValue);
+                var test = context.Calendars.Where(p => p.Day == calendar.Day && p.ID_Staff == calendar.ID_Staff).FirstOrDefault();
+                if (test != null) { MessageBox.Show("Existed"); }
+                else
+                {
+                    context.SaveChanges();
+                    MessageBox.Show("done");
+                    Calendar_Load(sender, e);
+                }
+               
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        private void griCalendar_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            cbbDormitory.SelectedValue =Convert.ToInt32( griCalendar.GetFocusedRowCellValue("DormitoryID"));
+            date.Text =griCalendar.GetFocusedRowCellValue("Day").ToString();
+            gridLookUpStaff.EditValue = Convert.ToInt32(griCalendar.GetFocusedRowCellValue("StaffID"));
         }
     }
 }

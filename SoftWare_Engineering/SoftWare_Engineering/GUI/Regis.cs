@@ -23,7 +23,7 @@ namespace SoftWare_Engineering.GUI
         private void btnRegis_Click(object sender, EventArgs e)
         {
             User user = new User();
-            if (txtEmail.Text == null|| txtpassword.Text==null)
+            if (txtEmail.Text=="" || txtPassConfirm.Text=="" || txtpassword.Text=="")
             {
                 MessageBox.Show("You have not entered enough information yet");
 
@@ -36,6 +36,7 @@ namespace SoftWare_Engineering.GUI
             {
                 MessageBox.Show("Invalid email");
             }
+            else if (txtpassword.Text != txtPassConfirm.Text) { MessageBox.Show("Password incorrect"); }
             else
             {
                 var u = context.Users.Find(txtEmail.Text);

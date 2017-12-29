@@ -37,6 +37,11 @@ namespace SoftWare_Engineering.Management_Student
             {
                 MessageBox.Show("phone number format is not correct"); return false;
             }
+            if (txtAddress.Text == "" || txtJobFather.Text == "" || txtJobMother.Text == "" || txtNameFather.Text == "" || txtNameMother.Text == "" || txtStudentName.Text == "")
+            {
+                MessageBox.Show("Enter full information");
+                return false;
+            }
             else return true;
         }
         private RegistrationForm GetByForm()
@@ -68,6 +73,8 @@ namespace SoftWare_Engineering.Management_Student
                 try
                 {
                     RegistrationForm tg = GetByForm();
+                    var regis = context.RegistrationForms.Where(p => p.Email == tg.Email).FirstOrDefault();
+                    if (regis != null) { MessageBox.Show("This student has registered"); }
                     context.RegistrationForms.Add(tg);
                     context.SaveChanges();
                     MessageBox.Show("Done");

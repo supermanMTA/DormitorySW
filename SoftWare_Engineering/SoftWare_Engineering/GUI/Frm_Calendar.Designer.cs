@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gridCalendar = new DevExpress.XtraGrid.GridControl();
             this.griCalendar = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnedit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpStaff.Properties)).BeginInit();
@@ -51,6 +52,7 @@
             // groupControl1
             // 
             this.groupControl1.AllowDrop = true;
+            this.groupControl1.Controls.Add(this.btnedit);
             this.groupControl1.Controls.Add(this.gridLookUpStaff);
             this.groupControl1.Controls.Add(this.cbbDormitory);
             this.groupControl1.Controls.Add(this.button2);
@@ -62,7 +64,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(306, 463);
+            this.groupControl1.Size = new System.Drawing.Size(300, 463);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "Information ";
             // 
@@ -118,6 +120,7 @@
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(178, 21);
             this.date.TabIndex = 2;
+            this.date.Value = new System.DateTime(2017, 12, 21, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -149,10 +152,10 @@
             // gridCalendar
             // 
             this.gridCalendar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridCalendar.Location = new System.Drawing.Point(306, 0);
+            this.gridCalendar.Location = new System.Drawing.Point(300, 0);
             this.gridCalendar.MainView = this.griCalendar;
             this.gridCalendar.Name = "gridCalendar";
-            this.gridCalendar.Size = new System.Drawing.Size(548, 462);
+            this.gridCalendar.Size = new System.Drawing.Size(554, 462);
             this.gridCalendar.TabIndex = 12;
             this.gridCalendar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.griCalendar});
@@ -163,6 +166,17 @@
             this.griCalendar.Name = "griCalendar";
             this.griCalendar.OptionsFind.AlwaysVisible = true;
             this.griCalendar.OptionsView.ShowGroupPanel = false;
+            this.griCalendar.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.griCalendar_FocusedRowChanged);
+            // 
+            // btnedit
+            // 
+            this.btnedit.Location = new System.Drawing.Point(107, 202);
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(59, 23);
+            this.btnedit.TabIndex = 8;
+            this.btnedit.Text = "Edit";
+            this.btnedit.UseVisualStyleBackColor = true;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // Frm_Calendar
             // 
@@ -200,5 +214,6 @@
         private System.Windows.Forms.ComboBox cbbDormitory;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpStaff;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private System.Windows.Forms.Button btnedit;
     }
 }

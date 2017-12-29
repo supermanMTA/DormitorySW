@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dorm));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.checkbox1 = new System.Windows.Forms.CheckBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.txtRoomName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbbTypeRoom = new System.Windows.Forms.ComboBox();
@@ -42,6 +44,9 @@
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupControlContainer1 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.navBarGroupControlContainer2 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.btnAssessment = new System.Windows.Forms.Button();
             this.navBarGroupControlContainer4 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
@@ -121,6 +126,8 @@
             // groupControl1
             // 
             this.groupControl1.AllowDrop = true;
+            this.groupControl1.Controls.Add(this.checkbox1);
+            this.groupControl1.Controls.Add(this.label16);
             this.groupControl1.Controls.Add(this.txtRoomName);
             this.groupControl1.Controls.Add(this.label5);
             this.groupControl1.Controls.Add(this.cbbTypeRoom);
@@ -140,6 +147,25 @@
             this.groupControl1.Size = new System.Drawing.Size(302, 560);
             this.groupControl1.TabIndex = 9;
             this.groupControl1.Text = "Information ";
+            // 
+            // checkbox1
+            // 
+            this.checkbox1.AutoSize = true;
+            this.checkbox1.Location = new System.Drawing.Point(97, 250);
+            this.checkbox1.Name = "checkbox1";
+            this.checkbox1.Size = new System.Drawing.Size(43, 17);
+            this.checkbox1.TabIndex = 26;
+            this.checkbox1.Text = "use";
+            this.checkbox1.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(25, 254);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(38, 13);
+            this.label16.TabIndex = 25;
+            this.label16.Text = "Status";
             // 
             // txtRoomName
             // 
@@ -211,7 +237,7 @@
             this.navBCTD,
             this.navKQDT,
             this.btnAssets});
-            this.navBarControl2.Location = new System.Drawing.Point(1, 234);
+            this.navBarControl2.Location = new System.Drawing.Point(1, 273);
             this.navBarControl2.Name = "navBarControl2";
             this.navBarControl2.OptionsNavPane.ExpandedWidth = 296;
             this.navBarControl2.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
@@ -223,7 +249,6 @@
             // 
             this.navBarGroup1.Caption = "Student List of Room";
             this.navBarGroup1.ControlContainer = this.navBarGroupControlContainer1;
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.GroupClientHeight = 133;
             this.navBarGroup1.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.navBarGroup1.Name = "navBarGroup1";
@@ -240,10 +265,37 @@
             // dgvStudent
             // 
             this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
+            this.StudentID,
+            this.StudentName});
             this.dgvStudent.Location = new System.Drawing.Point(4, 0);
             this.dgvStudent.Name = "dgvStudent";
-            this.dgvStudent.Size = new System.Drawing.Size(278, 126);
+            this.dgvStudent.Size = new System.Drawing.Size(277, 126);
             this.dgvStudent.TabIndex = 0;
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.FillWeight = 5F;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 30;
+            // 
+            // StudentID
+            // 
+            this.StudentID.DataPropertyName = "StudentID";
+            this.StudentID.FillWeight = 40F;
+            this.StudentID.HeaderText = "Student ID";
+            this.StudentID.Name = "StudentID";
+            this.StudentID.Width = 90;
+            // 
+            // StudentName
+            // 
+            this.StudentName.DataPropertyName = "StudentName";
+            this.StudentName.HeaderText = "Student Name";
+            this.StudentName.Name = "StudentName";
+            this.StudentName.Width = 120;
             // 
             // navBarGroupControlContainer2
             // 
@@ -763,7 +815,6 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.barDelete);
             this.ribbonPageGroup2.ItemLinks.Add(this.barSave);
             this.ribbonPageGroup2.ItemLinks.Add(this.barCancel);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barRoomEmpty);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "ribbonPageGroup1";
             // 
@@ -896,5 +947,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnEditAssets;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
+        private System.Windows.Forms.CheckBox checkbox1;
+        private System.Windows.Forms.Label label16;
     }
 }

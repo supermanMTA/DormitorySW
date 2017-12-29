@@ -71,6 +71,7 @@ namespace SoftWare_Engineering.Dorm
         }
         private void Bill_M_Load(object sender, EventArgs e)
         {
+            txtRoom.Text = id.ToString();
             LoadDgvBill();
             LoadControl();
         }
@@ -90,10 +91,10 @@ namespace SoftWare_Engineering.Dorm
             bill.BillOfMonth = Convert.ToInt32(cbbMonth.Text);
             bill.BillOfYear =(int) cbbYear.SelectedValue;
             bill.DateFounded = cbbDate.Value;
-            bill.ElectricCharge =Convert.ToInt32( txtElectric.Text);
-            bill.Rent = Convert.ToInt32(txtRent.Text);
-            bill.Surcharge = Convert.ToInt32(txtSurcharge.Text);
-            bill.WaterCharge = Convert.ToInt32(txtWater.Text);
+            bill.ElectricCharge =Convert.ToDouble( txtElectric.Text);
+            bill.Rent = Convert.ToDouble(txtRent.Text);
+            bill.Surcharge = Convert.ToDouble(txtSurcharge.Text);
+            bill.WaterCharge = Convert.ToDouble(txtWater.Text);
             bill.ID_Student = (int)cbbStudent.EditValue;
             bill.ID_Staff = (int)cbbStaff.EditValue;
             bill.ID_Room = Convert.ToInt32(txtRoom.Text);

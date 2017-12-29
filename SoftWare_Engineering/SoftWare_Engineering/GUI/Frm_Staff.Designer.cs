@@ -179,6 +179,7 @@
             // 
             // dtStaff
             // 
+            this.dtStaff.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtStaff.Location = new System.Drawing.Point(81, 284);
             this.dtStaff.Name = "dtStaff";
             this.dtStaff.Size = new System.Drawing.Size(190, 21);
@@ -197,6 +198,7 @@
             // 
             this.cbbReligion.FormattingEnabled = true;
             this.cbbReligion.Items.AddRange(new object[] {
+            "Không",
             "Thiên chúa giáo",
             "Tin lành",
             "Đạo hồi",
@@ -540,7 +542,7 @@
             // 
             // btnCalendar
             // 
-            this.btnCalendar.Caption = "Calendar";
+            this.btnCalendar.Caption = "Schedule";
             this.btnCalendar.Id = 33;
             this.btnCalendar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.ImageOptions.Image")));
             this.btnCalendar.Name = "btnCalendar";

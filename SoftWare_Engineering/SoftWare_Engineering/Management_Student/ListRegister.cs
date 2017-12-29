@@ -106,7 +106,7 @@ namespace SoftWare_Engineering.Management_Student
                 context.SaveChanges();
                 context.RegistrationForms.Remove(RG);
                 context.SaveChanges();
-                MessageBox.Show("Done");              
+                           
                 Room r = context.Rooms.Find(st.Room_ID);
                 r.Number++;
                 context.SaveChanges();
@@ -124,7 +124,9 @@ namespace SoftWare_Engineering.Management_Student
                 RL1.Relationship = "Mẹ";
                 context.Relatives.Add(RL1);
                 context.SaveChanges();
-                this.Hide();
+                MessageBox.Show("Done");
+                LoadStudent();
+                //  this.Hide();
             }
             catch(Exception ex)
             {
@@ -132,5 +134,13 @@ namespace SoftWare_Engineering.Management_Student
             }
         }
         #endregion
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            cbbRoom.Enabled = false;
+            btnCancel.Enabled = false;
+            button2.Enabled = false;
+            LoadStudent();
+        }
     }
 }

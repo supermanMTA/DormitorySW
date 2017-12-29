@@ -932,6 +932,7 @@
             // gridColumn12
             // 
             this.gridColumn12.Caption = "Email";
+            this.gridColumn12.FieldName = "Email";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 11;

@@ -38,13 +38,14 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.dateStart = new System.Windows.Forms.DateTimePicker();
             this.dateEnd = new System.Windows.Forms.DateTimePicker();
-            this.cbbStudent = new System.Windows.Forms.ComboBox();
             this.check = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dateFound = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbStudent = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cbbStaff = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtRoom = new System.Windows.Forms.TextBox();
@@ -58,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridContract)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gricontract)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbStudent.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbStaff.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -68,7 +71,7 @@
             this.gridContract.Location = new System.Drawing.Point(12, 218);
             this.gridContract.MainView = this.gricontract;
             this.gridContract.Name = "gridContract";
-            this.gridContract.Size = new System.Drawing.Size(831, 301);
+            this.gridContract.Size = new System.Drawing.Size(795, 301);
             this.gridContract.TabIndex = 113;
             this.gridContract.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gricontract});
@@ -152,18 +155,10 @@
             this.dateEnd.Size = new System.Drawing.Size(162, 20);
             this.dateEnd.TabIndex = 3;
             // 
-            // cbbStudent
-            // 
-            this.cbbStudent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbStudent.FormattingEnabled = true;
-            this.cbbStudent.Location = new System.Drawing.Point(107, 43);
-            this.cbbStudent.Name = "cbbStudent";
-            this.cbbStudent.Size = new System.Drawing.Size(196, 21);
-            this.cbbStudent.TabIndex = 2;
-            // 
             // check
             // 
             this.check.AutoSize = true;
+            this.check.Enabled = false;
             this.check.Location = new System.Drawing.Point(510, 105);
             this.check.Name = "check";
             this.check.Size = new System.Drawing.Size(61, 17);
@@ -209,6 +204,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(this.cbbStudent);
             this.groupBox1.Controls.Add(this.cbbStaff);
             this.groupBox1.Controls.Add(this.txtRoom);
             this.groupBox1.Controls.Add(this.dateFound);
@@ -216,7 +212,6 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.check);
-            this.groupBox1.Controls.Add(this.cbbStudent);
             this.groupBox1.Controls.Add(this.dateEnd);
             this.groupBox1.Controls.Add(this.dateStart);
             this.groupBox1.Controls.Add(this.txtID);
@@ -232,6 +227,23 @@
             this.groupBox1.TabIndex = 107;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Information";
+            // 
+            // cbbStudent
+            // 
+            this.cbbStudent.Location = new System.Drawing.Point(108, 45);
+            this.cbbStudent.Name = "cbbStudent";
+            this.cbbStudent.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbStudent.Properties.View = this.gridView1;
+            this.cbbStudent.Size = new System.Drawing.Size(195, 20);
+            this.cbbStudent.TabIndex = 120;
+            // 
+            // gridView1
+            // 
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // cbbStaff
             // 
@@ -341,7 +353,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(857, 516);
+            this.ClientSize = new System.Drawing.Size(819, 516);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.gridContract);
             this.Controls.Add(this.groupBox1);
@@ -355,6 +367,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gricontract)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbStudent.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbStaff.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.toolStrip1.ResumeLayout(false);
@@ -375,7 +389,6 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.DateTimePicker dateStart;
         private System.Windows.Forms.DateTimePicker dateEnd;
-        private System.Windows.Forms.ComboBox cbbStudent;
         private System.Windows.Forms.CheckBox check;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -392,5 +405,7 @@
         private System.Windows.Forms.TextBox txtRoom;
         private DevExpress.XtraEditors.GridLookUpEdit cbbStaff;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraEditors.GridLookUpEdit cbbStudent;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

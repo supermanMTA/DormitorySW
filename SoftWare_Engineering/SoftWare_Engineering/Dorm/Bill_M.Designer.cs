@@ -442,6 +442,7 @@
             this.Controls.Add(this.gridBill);
             this.Controls.Add(this.groupBox1);
             this.Name = "Bill_M";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bill_M";
             this.Load += new System.EventHandler(this.Bill_M_Load);
             this.groupBox1.ResumeLayout(false);

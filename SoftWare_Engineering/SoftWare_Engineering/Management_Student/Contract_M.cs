@@ -29,16 +29,17 @@ namespace SoftWare_Engineering.Management_Student
                 {
                     ID=p.ID,
                     Name=p.Name
-                }).ToList();
-                
-                
-                    
+                }).ToList();             
             cbbStaff.Properties.ValueMember = "ID";
             cbbStaff.Properties.DisplayMember = "Name";
-
-            cbbStudent.DataSource = context.Students.ToList();
-            cbbStudent.ValueMember = "ID";
-            cbbStudent.DisplayMember = "Name";
+            
+            cbbStudent.Properties.DataSource = context.Students
+                .Select(p=>new {
+                    ID=p.ID,
+                    Name=p.Name
+                }).ToList();
+            cbbStudent.Properties.ValueMember = "ID";
+            cbbStudent.Properties.DisplayMember = "Name";
 
            
         }
@@ -49,9 +50,9 @@ namespace SoftWare_Engineering.Management_Student
                                {
                                    IDOfContract = p.ID,
                                    IDOfStudent = p.ID_Student,
-                                   StudentName=context.Students.Where(z=>z.ID==p.ID_Student).FirstOrDefault().Name,
+                                   StudentID = p.ID_Student,//context.Students.Where(z=>z.ID==p.ID_Student).FirstOrDefault().Name,
                                    IDOfStaff = p.ID_Staff,
-                                   StaffName=context.Staffs.Where(z=>z.ID==p.ID_Staff).FirstOrDefault().Name,
+                                   StaffID = p.ID_Staff,//context.Staffs.Where(z=>z.ID==p.ID_Staff).FirstOrDefault().Name,
                                    IDOfRoom = p.ID_Room,
                                    DateStart = p.DateStart,
                                    DateEnd = p.DateEnd,
@@ -63,22 +64,28 @@ namespace SoftWare_Engineering.Management_Student
 
         private void Contract_M_Load(object sender, EventArgs e)
         {
+            
             LoadControl();
             LoaddgvContract();
         }
         #endregion
-        #region Lấy dữ liệu
 
+        #region Lấy dữ liệu
+        public bool checkDL()
+        {
+            if (dateEnd.Value < dateStart.Value) { MessageBox.Show("date end incorrect "); return false; }
+            return true;
+        }
         private Contract GetContractByForm(Contract contract)
         {
-            contract.ID_Student = Convert.ToInt32( cbbStudent.SelectedValue);
+            contract.ID_Student = Convert.ToInt32( cbbStudent.EditValue);
             contract.ID_Room = (int)context.Students.Find(contract.ID_Student).Room_ID;
             contract.ID_Staff = Convert.ToInt32(cbbStaff.EditValue);
             contract.DateEnd = dateEnd.Value;
             contract.DateFound = dateFound.Value;
             contract.DateStart = dateStart.Value;
             txtRoom.Text = contract.ID_Room.ToString();
-            if (check.Checked == true)
+            if (dateEnd.Value< DateTime.Now)
             {
                 contract.Expired = true;
             }
@@ -86,6 +93,7 @@ namespace SoftWare_Engineering.Management_Student
             return contract;
         }
         #endregion
+
         #region Sự kiện
         private void gricontract_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -94,14 +102,17 @@ namespace SoftWare_Engineering.Management_Student
                 try
                 {
                     txtID.Text = gricontract.GetFocusedRowCellValue("IDOfContract").ToString();
-                    cbbStudent.Text = gricontract.GetFocusedRowCellValue("StudentName").ToString();
-                    cbbStaff.Text = gricontract.GetFocusedRowCellValue("StaffName").ToString();
+                    cbbStudent.EditValue = gricontract.GetFocusedRowCellValue("StudentID").ToString();
+                    cbbStaff.EditValue = gricontract.GetFocusedRowCellValue("StaffID").ToString();
                     txtRoom.Text= gricontract.GetFocusedRowCellValue("IDOfRoom").ToString();
                     dateStart.Value = (DateTime)gricontract.GetFocusedRowCellValue("DateStart");
                     dateEnd.Value = (DateTime)gricontract.GetFocusedRowCellValue("DateEnd");
                     dateFound.Value = (DateTime)gricontract.GetFocusedRowCellValue("DateFound");
-                    if (gricontract.GetFocusedRowCellValue("Expired").ToString() == "Hết hạn")
+                    if (dateEnd.Value < DateTime.Now)
+                    {
                         check.Checked = true;
+                    }
+                    else { check.Checked = false; }
                 }
                 catch (Exception ex)
                 {
@@ -171,10 +182,16 @@ namespace SoftWare_Engineering.Management_Student
                 {
                     Contract tg = new Contract();
                     GetContractByForm(tg);
-                    context.Contracts.Add(tg);
-                    context.SaveChanges();
-                    MessageBox.Show("Done");
-                    LoaddgvContract();
+                    var test = context.Contracts.Where(p => p.ID_Student == tg.ID_Student).FirstOrDefault();
+                    if (test != null) { MessageBox.Show("This student contract exists"); }
+                    else
+                    {
+                        context.Contracts.Add(tg);
+                        context.SaveChanges();
+                        MessageBox.Show("Done");
+                        LoaddgvContract();
+                    }
+                    
                 }
                 catch (Exception ex)
                 {

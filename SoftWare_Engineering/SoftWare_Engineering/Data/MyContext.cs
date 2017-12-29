@@ -8,7 +8,7 @@ namespace SoftWare_Engineering.Data
     public partial class MyContext : DbContext
     {
         public MyContext()
-            : base("name=MyContext2")
+            : base("name=MyContext1")
         {
         }
 
